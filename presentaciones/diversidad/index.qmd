@@ -1,0 +1,2459 @@
+---
+title: "Diversidad"
+# date: 2025-03-18
+format: revealjs
+bibliography: references.bib
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+# if (!require("tidyverse")) install.packages("tidyverse"); library("tidyverse")
+# if (!require("ggtext")) install.packages("ggtext"); library("ggtext")
+# if (!require("sysfonts")) install.packages("sysfonts"); library("sysfonts")
+# if (!require("showtext")) install.packages("showtext"); library("showtext")
+
+library("tidyverse")
+library("ggtext")
+library("sysfonts")
+library("showtext")
+
+sysfonts::font_add_google(
+  name = "Atkinson Hyperlegible",
+  family = "atkinson"
+)
+
+showtext::showtext_auto()
+```
+
+# Diversidad
+
+> Nuestros sistemas de clasificación son hipótesis, modelos que intentan representar esa evolución. @mauseth2016.
+
+## Diversidad
+
+> La variabilidad de organismos vivos de cualquier fuente, incluidos, entre otras cosas, los ecosistemas terrestres y marinos y otros ecosistemas acuáticos y los complejos ecológicos de los que forman parte; comprende la diversidad dentro de cada especie, entre las especies y de los ecosistemas. @nacionesunidas1992.
+
+![Representación de la diversidad de animales, bacterias, hongos y plantas.](/presentaciones/images/diversidad.jpg){#fig-diversidad fig-align="center"}
+
+## El árbol de la vida
+
+![El árbol de la vida. @eisenberg2017.](/presentaciones/images/tree-of-life_eisenberg.jpg){#fig-tree-life-beaud fig-align="center"}
+
+## Diversidad en cifras
+
+![El número total estimado de especies de los cuatro grupos principales se muestra en verde, y el número actual de especies descritas científicamente se muestra en negro. @sotwpf2023.](/presentaciones/images/diversidad_numeros.png){#fig-diversidad_numeros_01 fig-align="center"}
+
+## Diversidad en cifras
+
+![Número de especies identificadas y nombradas en cada grupo taxonómico. @owid2022.](/presentaciones/images/diversidad_numeros.svg){#fig-diversidad_numeros_02 fig-align="center"}
+
+## Diversidad en Colombia
+
+```{r}
+#| label: diversidad-colombia
+#| echo: false
+#| message: false
+
+datos_colombia <- 
+  tibble::tribble(
+  ~grupo, ~numero,
+  "Vertebrados", 8161,
+  "Anfibios", 927,
+  "Aves", 1821,
+  "Mamiferos", 458,
+  "Reptiles", 591,
+  "Peces", 4298,
+  "Invertebrados", 23724,
+  "Arácnidos", 1500,
+  "Corales", 196,
+  "Crustáceos", 1806,
+  "Equinodermos", 435,
+  "Esponjas", 251,
+  "Insectos", 13985,
+  "Medusas", 153,
+  "Moluscos", 3638,
+  "Plantas", 37718,
+  "Angiospermas", 32343,
+  "Musgos", 1312,
+  "Hepáticas", 846,
+  "Helechos", 2174,
+  "Gimnospermas", 117,
+  "Antoceros", 19,
+  "Hongos", 6936,
+  "Archeas", 20,
+  "Bacterías", 1390,
+  "Cromistas", 1390,
+  "Protozoos", 226
+)
+
+datos_colombia |> 
+  dplyr::mutate(
+    grupo = forcats::fct_reorder(grupo, numero)
+  ) |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = grupo,
+      y = numero,
+      label = numero
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    fill = "#0072B2"
+  ) +
+  ggplot2::geom_text(
+    hjust = -0.1,
+    size = 3
+  ) +
+  ggplot2::coord_flip() +
+  ggplot2::labs(
+    title = "**Número de especies observadas en Colombia**",
+    subtitle = "En marzo de 2025, el Sistema de Información sobre Biodiversidad de Colombia (SiB Colombia) registró 79828 especies observadas,<br>de las cuales 75723 habitan en el continente y 7633 en el mar. Se estima que en Colombia podrían existir alrededor de 200000 especies.",
+    caption = "**Datos:** SiB Colombia. (2025). *Biodiversidad en Cifras*. cifras.biodiversidad.co | **Elaboró:** Álex Espinosa-Correa | **Licencia:** CC BY",
+    x = NULL,
+    y = NULL
+  ) +
+  ggplot2::theme_minimal(
+    base_family = "atkinson"
+  ) +
+  ggplot2::theme(
+    plot.caption = ggtext::element_markdown(),
+    plot.title = ggtext::element_markdown(size = 12),
+    plot.subtitle = ggtext::element_markdown(size = 10)
+  )
+```
+
+## Diversidad en Antioquia
+
+```{r}
+#| label: diversidad-antioquia
+#| echo: false
+#| message: false
+
+datos_antioquia <- 
+  tibble::tribble(
+  ~grupo, ~numero,
+  "Vertebrados", 2382,
+  "Anfibios", 318,
+  "Aves", 1150,
+  "Mamiferos", 260,
+  "Reptiles", 246,
+  "Peces", 408,
+  "Invertebrados", 3647,
+  "Arácnidos", 175,
+  "Corales", 20,
+  "Crustáceos", 69,
+  "Insectos", 3078,
+  "Moluscos", 166,
+  "Plantas", 13581,
+  "Angiospermas", 11526,
+  "Musgos", 589,
+  "Hepáticas", 284,
+  "Helechos", 1036,
+  "Gimnospermas", 37,
+  "Antoceros", 3,
+  "Hongos", 1634,
+  "Bacterías", 121,
+  "Cromistas", 206,
+  "Protozoos", 64
+)
+
+datos_antioquia |> 
+  dplyr::mutate(
+    grupo = forcats::fct_reorder(grupo, numero)
+  ) |> 
+  ggplot2::ggplot(
+    ggplot2::aes(
+      x = grupo,
+      y = numero,
+      label = numero
+    )
+  ) + 
+  ggplot2::geom_bar(
+    stat = "identity",
+    fill = "#0072B2"
+  ) +
+  ggplot2::geom_text(
+    hjust = -0.1,
+    size = 3
+  ) +
+  ggplot2::coord_flip() +
+  ggplot2::labs(
+    title = "**Número de especies observadas en Antioquia**",
+    subtitle = "En marzo de 2025, el Sistema de Información sobre Biodiversidad de Colombia (SiB Colombia) registró 21689 especies en Antioquia<br>(27.2 % del total en Colombia), con 21458 en el continente y 288 en el mar. Se estima que el departamento alberga unas 37.591 especies.",
+    caption = "**Datos:** SiB Colombia. (2025). *Biodiversidad en Cifras*. cifras.biodiversidad.co | **Elaboró** Álex Espinosa-Correa | **Licencia:** CC BY",
+    x = NULL,
+    y = NULL
+  ) +
+  ggplot2::theme_minimal(
+    base_family = "atkinson"
+  ) +
+  ggplot2::theme(
+    plot.caption = ggtext::element_markdown(),
+    plot.title = ggtext::element_markdown(size = 12),
+    plot.subtitle = ggtext::element_markdown(size = 10),
+  )
+```
+
+## Sistemática y evolución
+
+::: columns
+::: {.column .fragment width="50%"}
+> A lo largo de la historia, las personas han distinguido a menudo entre diversas plantas y animales según preocupaciones prácticas: este animal, ¿es o no peligroso? Esta planta, ¿es venenosa o comestible? ¿Qué plantas pueden emplearse como medicinas contra esta enfermedad? @nabors2006.
+
+::: incremental
+-   **Sistemática:** ciencia que incluye y abarca la taxonomía tradicional, la descripción, identificación, nomenclatura y clasificación de los organismos, y que tiene como objetivo principal la reconstrucción de la filogenia, o historia evolutiva, de la vida.
+
+-   **Filogenética:** clasificación basada en la historia evolutiva o el patrón de descendencia; se refiere a las relaciones entre grupos de individuos en un momento dado.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Aunque existían clasificaciones antes de Darwin, tras proponer la teoría de la evolución junto a Wallace, estas adoptaron un enfoque evolutivo. <a href="https://commons.wikimedia.org/wiki/File:Charles_Darwin_portrait.jpg">Herbert Rose Barraud</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/charles_darwin.jpg){#fig-darwin fig-align="center" width="60%"}
+:::
+:::
+
+## Cladística o sistemática filogenética
+
+::: columns
+::: {.column .fragment width="50%"}
+> Metodología para inferir el patrón de la historia evolutiva de un grupo de organismos mediante la agrupación de taxones basada en apomorfías. @simpson2019
+
+::: incremental
+-   Los estudios cladísticos se complican por el hecho de que las plantas pueden parecerse entre sí por dos razones distintas: (1) han descendido de un ancestro común, o (2) han sufrido una evolución convergente.
+
+-   Determinar si una similitud se debe a la homología (ascendencia común) o a la analogía (evolución convergente) puede ser extremadamente difícil.
+
+-   Un cladograma debe construirse de la forma más sencilla, menos complicada y más eficaz. Este principio se denomina principio de parsimonia o navaja de Ockham.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Willi Hennig (1913-1976) propuso la cladísta en 1950 en *Fundamentos de una teoría de la sistemática filogenética*. By Gerd Hennig, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=107698">Link</a>.](/presentaciones/images/willi_hennig.jpg){#fig-hennig fig-align="center"}
+:::
+:::
+
+## Clado y Taxón
+
+::: columns
+::: {.column .incremental width="50%"}
+-   **Clado:** grupo monofilético, formado por un ancestro común y todos los linajes que surgen de ese ancestro común. Ver: linaje.
+
+-   **Linaje:** secuencia de poblaciones ancestrales-descendientes, en la que los miembros están vinculados o conectados por flujo génico. Ver: clado.
+
+-   **Taxón **(plural, taxa): grupo de organismos, idealmente monofilético y tradicionalmente tratado con un rango determinado.
+
+-   **Rango:** una de las categorías taxonómicas jerárquicas, en la que un rango superior incluye todos los rangos inferiores.
+:::
+
+::: {.column .fragment width="50%"}
+![Diferencia entre clados (izquierda) y taxones (derecha). A, B y C son grupos que están delimitados por sus apomorfías (izquierda) o por su circunscripción (derecha). <a href="https://commons.wikimedia.org/wiki/File:Cladograma_diferencia_entre_clados_y_taxones.svg">RoRo</a>, CC0, via Wikimedia Commons.](/presentaciones/images/cladograma_diferencia_clados_taxones.svg){#fig-cladograma-clado-taxon fig-align="center"}
+:::
+:::
+
+::: footer
+Definiciones tomadas de @simpson2019. 
+:::
+
+## Carácteres
+
+::: columns
+::: {.column .incremental width="50%"}
+-   **Carácter:** característica o atributo de un taxón.
+
+-   **Estado del carácter:** una de las dos o más formas de un carácter.
+
+-   **Ancestral:** se refiere a una condición o estado de carácter preexistente. Sinónimo: plesiomorfo; primitivo.
+
+-   **Derivado:** se refiere a una nueva condición o estado del carácter. Sinónimo: apomórfico, avanzado.
+
+-   **Homología:** similitud resultante de una ascendencia común. Adjetivo: homólogo.
+
+-   **Homólogo:** carácter específico que es homólogo a otro rasgo citado. Ver: homología.
+:::
+
+::: {.column .fragment width="50%"}
+![Caracteres biológicos según su posición evolutiva. <a href="https://commons.wikimedia.org/wiki/File:Cladogramanotansimple.svg">RoRo</a>, CC0, via Wikimedia Commons.](/presentaciones/images/cladograma-caracteres.svg){#fig-cladograma-caracteres fig-align="center"}
+
+![Huesos homólogos en diferentes vertebrados. <a href="https://commons.wikimedia.org/wiki/File:Homology_vertebrates-es.svg">Волков Владислав Петрович (Vladlen666); translation by Angelito7</a>, CC0, via Wikimedia Commons.](/presentaciones/images/homology_vertebrates-es.svg){#fig-cladograma-caracteres fig-align="center" width="50%"}
+:::
+:::
+
+::: footer
+Definiciones tomadas de @simpson2019. 
+:::
+
+## Morfías
+
+::: columns
+::: {.column .incremental width="50%"}
+-   **Apoformia:** una condición derivada o estado de carácter, que representa una novedad evolutiva.
+
+    -   **Autapomorfía:** apomorfía que se da en un único linaje o taxón.
+
+    -   **Sinapomorfia:** apomorfía que une dos o más taxones o linajes
+
+-   **Plesiomorfia:** carácter ancestral
+
+    -   **Simplesiomorfia:** carácter ancestral (plesiomorfo) compartido entre taxones, que puede servir de base para agruparlos en una clasificación fenética.
+
+
+:::
+
+::: {.column .fragment width="50%"}
+![El carácter círculo negro es plesiomórfico y simplesiomórfico. El círculo gris es apomorfo y sinapomorfo. El carácter círculo blanco es apoformo y autapomorfo. A, B, C, D y E son taxones existentes y F, G, H e I son antepasados comunes. <a href="https://commons.wikimedia.org/wiki/File:Clado.JPG">Biotoscano</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/morfias.jpg){#fig-morfias fig-align="center"}
+:::
+:::
+
+::: footer
+Definiciones tomadas de @simpson2019. 
+:::
+
+## Monofilético vs Parafilético
+
+::: columns
+::: {.column .incremental width="50%"}
+-   **Monofilético:** grupo que consiste en un ancestro común más todos (y sólo todos) los descendientes de ese ancestro.
+
+-   **Parafilético:** grupo que incluye un ancestro común más algunos, pero no todos, los descendientes de ese ancestro común.
+
+-   **Polifilético:** grupo formado por dos o más grupos monofiléticos o parafiléticos separados, cada uno con un antepasado común distinto; grupo en el que el antepasado común de todos los miembros no es a su vez miembro del grupo.
+:::
+
+::: {.column .fragment width="50%"}
+![Cladograma de los vertebrados que muestra los tres diferentes grupos filogenéticos o taxones que existen. <a href="https://commons.wikimedia.org/wiki/File:Phylogenetic-Groups.svg">TotoBaggins at English Wikipedia</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/phylogenetic-groups.svg){#fig-phylogenetic-groups fig-align="center"}
+:::
+:::
+
+::: footer
+Definiciones tomadas de @simpson2019. 
+:::
+
+## Taxonomía: nomenclatura y clasificación
+
+> Un aspecto importante de la sistemática es la taxonomía, que consiste en identificar, nombrar y clasificar las especies. @evert2013.
+
+::: columns
+::: {.column .fragment width="50%"}
+![El sistema moderno de nomenclatura de los seres vivos comenzó con el naturalista sueco Carl Linnaeus (1707-1778). <a href="https://commons.wikimedia.org/wiki/File:Carl_von_Linn%C3%A9.jpg">Alexander Roslin</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/carl_von_linne.jpg){#fig-linneo fig-align="center" width="50%"}
+:::
+
+::: {.column .fragment width="50%"}
+![En 1753, Linnaeus publicó *Species Plantarum* (Las especies de las plantas) en la que describía cada especie en latín, en una secuencia limitada a 12 palabras. Linnaeus hizo permanente el **sistema binomial** («de dos términos») de nomenclatura. <a href="https://commons.wikimedia.org/wiki/File:Species_plantarum_001.jpg">Carl Linnaeus</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/species_plantarum.jpg){#fig-species-plantarum fig-align="center" width="40%"}
+:::
+:::
+
+## Código Internacional de Nomenclatura para algas, hongos y plantas (ICN)
+
+::: columns
+::: {.column .fragment width="50%"}
+> El Código Internacional de Nomenclatura de algas, hongos y plantas es el conjunto de normas y recomendaciones que rigen la denominación científica de todos los organismos tradicionalmente tratados como algas, hongos o plantas, fósiles o no fósiles, incluidas las algas verdeazuladas (cianobacterias), los quítridos, los oomicetos, los mohos limosos y los protistas fotosintéticos con sus grupos no fotosintéticos taxonómicamente relacionados (pero excluidos los microsporidios). Antes de 2011 se denominaba Código Internacional de Nomenclatura Botánica (CINB).
+:::
+
+::: {.column .fragment width="50%"}
+![La útlima versión del Código recoge las decisiones de la Sección de Nomenclatura del XIX Congreso Botánico Internacional (IBC), que tuvo lugar en Shenzhen, China, en julio de 2017.](/presentaciones/images/icn_2018.jpg){#fig-icn fig-align="center"}
+:::
+:::
+
+::: footer
+Texto e imagen de @internat2018.
+:::
+
+## Principios del ICN
+
+::: columns
+::: {.column .incremental width="50%"}
+-   **Principio I.** La nomenclatura de algas, hongos y plantas es **independiente** de la no- menclatura zoológica y procariótica (bacteriológica).
+
+-   **Principio II.** La aplicación de los nombres de los grupos taxonómicos se determina por medio de los **tipos nomenclaturales**.
+
+-   **Principio III.** La nomenclatura de un grupo taxonómico se basa en la **prioridad de la publicación**.
+:::
+
+::: {.column .incremental width="50%"}
+-   **Principio IV.** Cada grupo taxonómico con circunscripción, posición y rango particulares puede llevar solo **un nombre correcto**, el más antiguo que esté de acuerdo con las reglas, excepto en casos determinados.
+
+-   **Principio V.** Los nombres científicos de los grupos taxonómicos se consideran **latinos**, sin reparar en su origen.
+
+-   **Principio VI.** Las reglas de nomenclatura tienen **efecto retroactivo**, salvo limitación expresa.
+:::
+:::
+
+## Rangos taxónomicos {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+![Rangos o categorías taxónomicas principales. <a href="https://commons.wikimedia.org/wiki/File:Categorias_taxonomicas_es.svg">derivative work: Xvazquez (talk)11866.0.Bpatrisiovamachoiological_classification_L_Pengo_es.svg: User:Pengo</a>, <a href="https://creativecommons.org/licenses/by-sa/2.5">CC BY-SA 2.5</a>, via Wikimedia Commons.](/presentaciones/images/categorias_taxonomicas.svg){#fig-rangos fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+
+| Categoría o rango     | Sufijo                                                                                           |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| **División o Filo**   | -phyta                                                                                           |
+| Subdivisión o subfilo | -phytina                                                                                         |
+| **Clase**             | -opsida                                                                                          |
+| Subclase              | -idae                                                                                            |
+| **Orden**             | -ales                                                                                            |
+| **Familia**           | -aceae                                                                                           |
+| Subfamilia            | -oideae                                                                                          |
+| Tribu                 | -eae, ae                                                                                         |
+| **Género**            | -us, -a, -um, -is, -os, -ina, -ium, -ides, -ella, -ula, -aster, -cola, -ensis, -oides, -opsis... |
+| **Especie**           | Varias terminaciones                                                                             |
+
+: Rangos taxonómicos principales: reino, división o filo, clase, orden, familia, género y especie. Rangos taxonómicos secundarios: entre familia y género (tribu), entre género y especie (sección y serie), por debajo de especie (variedad y forma). Se pueden construir otros rangos agregando el prefijo «Sub\-» a los rangos principales o secundarios. {#tbl-rangos}
+:::
+:::
+
+## Rangos taxónomicos: ejemplos
+
+| Categoría o rango   | Frailejón                 | Palma de cera           |
+|---------------------|---------------------------|-------------------------|
+| **División o Filo** | Magnolio**phyta**         | Magnolio**phyta**       |
+| **Clase**           | Magnoli**opsida**         | Lili**opsida**          |
+| **Orden**           | Aster**ales**             | Arec**ales**            |
+| **Familia**         | Aster**aceae**            | Arec**aceae**           |
+| **Género**          | *Espeletia*               | *Ceroxylon*             |
+| **Especie**         | *Espeletia frontinoensis* | *Ceroxylon quindiuense* |
+
+: En los trabajos taxonómicos se recomienda indicar la cita completa del nombre del taxón (nombre del taxón y autor) la primera vez que se menciona: *Espeletia frontinoensis* Cuatrec. y *Ceroxylon quindiuense* (H. Karst.) H. Wendl. {#tbl-rangos-ejemplos}
+
+::: fragment
+Por diversas razones, algunos nombres se conservan (nomen conservandum), como Palmae (Arecaceae), Leguminosae (Fabaceae), Gramineae (Poaceae), Guttiferae (Clusiaceae), Umbelliferae (Apiaceae), Labiatae (Lamiaceae) y Compositae (Asteraceae).
+:::
+
+## Publicación válida de taxones
+
+::: columns
+::: {.column .fragment width="50%"}
+A partir del 1 de Enero de 1935 para que el nombre de un taxón esté publicado validamente debe de cumplir con:
+
+::: incremental
+-   El taxón debe ser nombrado
+-   El rango taxónomico debe estar claramente indicado
+-   Designado un tipo nomenclatural
+-   Diagnosis en latín o inglés
+-   Estar efectivamente publicada
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Ejemplo de publicación efectiva. @murillo-serna2025.](/presentaciones/images/diversidad_publicacion_01.png){#fig-publicacion-01 fig-align="center"}
+:::
+:::
+
+## Publicación válida de taxones
+
+::: columns
+::: {.column .fragment width="50%"}
+![Ejemplo de publicación valida @murillo-serna2025.](/presentaciones/images/diversidad_publicacion_02.png){#fig-publicacion-02 fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Tipo nomenclatural de *Maracanthus kuijtii* (HUA, HUA134843). @murillo-serna2025.](/presentaciones/images/diversidad_publicacion_03.jpg){#fig-publicacion-03 fig-align="center" width="65%"}
+:::
+:::
+
+## Ciclo de vida y diploidía
+
+::: columns
+::: {.column .incremental width="50%"}
+
+-   **Ciclo de vida:** secuencia completa de fases en el crecimiento y desarrollo de un organismo, desde la formación del cigoto hasta la producción de gametos.
+
+-   **Alternancia de generaciones:** ciclo reproductivo en el que una fase haploide (n), el gametofito, produce gametos que se fusionan en pares para formar un cigoto, el cual germina y da origen a una fase diploide (2n), el esporofito. Las esporas producidas por división meiótica en el esporofito generan nuevos gametofitos, completando así el ciclo
+:::
+
+::: {.column .fragment width="50%"}
+
+![Los principales tipos de ciclos de vida. La fase diploide del ciclo tiene lugar debajo de la barra ancha, y la fase haploide, encima. Las cuatro flechas blancas representan los productos de la meiosis; la única flecha blanca representa el óvulo fecundado o cigoto.](/presentaciones/images/ciclos_vida.png){#fig-ciclos-vida fig-align="center" width="35%"}
+:::
+:::
+
+::: footer
+Definiciones e imagen de @evert2013.
+:::
+
+## Vivimos en un mundo de bacterias
+
+![El árbol de la vida. Beaud (2023). Tomado de @sgribaldo2023.](/presentaciones/images/tree_of_life_beaud.jpg){#fig-tree-life-beaud fig-align="center"}
+
+
+
+## Algunos acontecimientos evolutivos importantes
+
+::: columns
+::: {.column .fragment width="50%"}
+![La gran mayoría de la columna geológica está ocupada por el Precámbrico, y muchos de los acontecimientos históricos más importantes se registran en este lapso de tiempo. @niklas2016.](/presentaciones/images/cronologia_01.png){#fig-cronologia-01 fig-align="center" width="75%"}
+:::
+
+::: {.column .fragment width="50%"}
+![Esquema de la columna geológica que enfatiza el intervalo de tiempo denominado Fanerozoico (que abarca desde 570 Mya hasta la actualidad). @niklas2016.](/presentaciones/images/cronologia_02.png){#fig-cronologia-02 fig-align="center" width="75%"}
+:::
+:::
+
+## Viridiplantae: las plantas verdes {.smaller}
+
+> Las algas verdes (Chlorophyceae y Charophyceae) y las Embryophyta son un grupo monofilético de plantas que se denominan colectivamente Viridiplantae o Chloroplastida. Las Charophyceae y las Embryophyta se denominan colectivamente Streptophyta. @niklas2016.
+
+::: fragment
+Único grupo de organismos que contienen clorofilas a y b, almacenan almidón en el interior de los plástidos, tilacoides apilados en grana, ¿pared celular de celulosa?
+::: 
+
+::: columns
+::: {.column .fragment width="50%"}
+![Cladograma de las relaciones filogenéticas de Viridiplantae. Algunas de las relaciones filogenéticas mostradas en este diagrama son problemáticas. @niklas2016.](/presentaciones/images/viridiplante_cladograma_01.png){#fig-viridiplante-cladograma-01 fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Cladograma del estado actual de las relaciones filogenéticas entre los Streptophyta a partir de los últimos estudios filogenéticos y filogenómicos. @bierenbroodspot2024.](/presentaciones/images/viridiplante_cladograma_02.jpeg){#fig-viridiplante-cladograma-02 fig-align="center" width="65%"}
+:::
+:::
+
+## Viridiplantae: relaciones
+
+![Árbol filogenómico de plástidos basado en el análisis de 1827 taxones de Viridiplantae y 52 outgroups utilizando 78 genes codificadores de proteínas. @gitzendanner2018.](/presentaciones/images/viridiplante_cladograma_03.jpg){#fig-viridiplante-cladograma-03 fig-align="center"}
+
+## Viridiplantae: relaciones
+
+![Abreviaturas: Chloro, Chlorophyta; Chkb, Chlorokybophyceae; Klb, Klebsormidiophyceae; C, Charophyceae; Cole, Coleochaetophyceae; Zygnemato, Zygnematophyceae; Ho, hornworts; Lycophy, Lycophyta; Pterid., Pteridophyta. @puttick2018.](/presentaciones/images/viridiplante_arbol.jpg){#fig-viridiplante-cladograma-04 fig-align="center"}
+
+## Algas
+
+::: columns
+::: {.column .fragment width="50%"}
+> Término tradicional para una serie de grupos no relacionados de organismos eucariotas fotosintéticos que carecen de órganos sexuales pluricelulares (excepto las carófitas); las mal llamadas «algas verdeazuladas» son cianobacterias, uno de los grupos de bacterias fotosintéticas. @evert2013.
+
+::: fragment
+Las algas se diferencian por sus pigmentos fotosintéticos, sustancias de reserva, composición de la pared celular, presencia o ausencia de células móviles, morfología y disposición de los flagelos, organización nuclear, tipo de reproducción y alternancia de generaciones.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Variedad de algas pluricelulares, entre algas verdes, rojas y pardas. <a href="https://commons.wikimedia.org/wiki/File:Adolphe_Millot_algues.jpg">Adolphe Millot (1857–1921)</a>, Public domain, via Wikimedia Commons. ](/presentaciones/images/algues_adolphe_millot.jpg){#fig-algas fig-align="center" width="60%"}
+:::
+:::
+
+## Algas: características {.smaller}
+
+| Filo                                  | Número aproximado de especies conocidas | Pigmentos fotosintéticos              | Características                                                                                                             |
+|-----------------|-----------------|-----------------|--------------------|
+| Euglenophyta (euglenoides)            | 800                                     | Clorofila *a, b*<br>Carotenoides      | Principalmente de agua dulce<br>Algunas no fotosintéticas<br>Flageladas                                                     |
+| Dinophyta (dinoflagelados)            | 3000                                    | Clorofila *a, c*<br>Carotenoides      | Fitoplancton de agua cálida salada y dulce<br>Algunas no fotosintéticas<br>Algunas producen toxinas nerviosas<br>Flageladas |
+| Bacillariophyta (diatomeas)           | 5600                                    | Clorofila *a, c*<br>Carotenoides      | Fitoplancton de agua fría salada y dulce<br>Algunas especies terrestres<br>Paredes celulares de sílice                      |
+| Xanthophyta (algas verdeamarillentas) | 600                                     | Clorofila *a, c*<br>Carotenoides      | Fitoplancton principalmente de agua dulce<br>Flageladas                                                                     |
+| Chrysophyta (algas doradas)           | 1000                                    | Clorofila *a, c*<br>Carotenoides      | Fitoplancton marino y de agua dulce<br>Flageladas<br>Algunas no fotosintéticas                                              |
+| Cryptophyta (criptofitas)             | 200                                     | Clorofila *a, c*<br>Ficobiliproteínas | Fitoplancton de agua dulce fría<br>Flageladas                                                                               |
+| Prymnesiophyta (haptofitas)           | 300                                     | Clorofila *a, c*<br>Carotenoides      | Fitoplancton principalmente en agua marina cálida<br>Flageladas                                                             |
+
+: Características de los filos con algas unicelulares o coloniales. @nabors2006. {#tbl-algas}
+
+## Algas: características {.smaller}
+
+| Filo                       | Número aproximado de especies conocidas | Pigmentos fotosintéticos                       | Características                                                                                                               |
+|-----------------|-----------------|-----------------|--------------------|
+| Phaeophyta (algas pardas)  | 1500                                    | Clorofila *a, c*<br>Carotenoides (fucoxantina) | Principalmente en zonas marinas intermareales y someras<br>Engloban a los quelpos<br>Flageladas<br>Producen esporas y gametos |
+| Rhodophyta (algas rojas)   | 5000                                    | Clorofila *a, d*<br>Ficobiliproteínas          | Principalmente marinas<br>Sin células flageladas en el ciclo vital                                                            |
+| Chlorophyta (algas verdes) | 7500                                    | Clorofila *a, b*                               | Principalmente de agua dulce<br>Algunas emparentadas con las plantas<br>En ocasiones, flageladas                              |
+
+: Características de los filos con algas pluricelulares. @nabors2006. {#tbl-algas}
+
+## Chlorophyta 
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Alrededor de 8200 especies
+-   Contienen clorofila a y b, β-caroteno y xantofilas
+-   Almacenan almidón dentro de los cloroplastos
+:::
+
+::: {.column .incremental width="50%"}
+-   Unicelulares, pluricelulares, filamentosas y cenocíticas
+-   Agua dulce, marina, salobre y ambientes terrestres
+-   Reproducción sexual o asexual
+:::
+:::
+
+::: columns
+::: {.column .fragment width="50%"}
+![Lechuga de mar, *Ulva lactuca*, crece en rocas, pilotes y lugares similares en mares poco profundos de todo el mundo. <a href="https://commons.wikimedia.org/wiki/File:Ecomare_-_zeesla_(zeesla-2340-ogb).jpg">Ecomare/Oscar Bos</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.](/presentaciones/images/chlorophyta_ulva.jpg){#fig-viridiplante-ulva fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![*Volvox* es una Chlorophyta colonial. Cada esfera grande es una colonia de entre unos cientos y unos miles de células. Las esferas pequeñas dentro de las grandes son las colonias hijas. <a href="https://commons.wikimedia.org/wiki/File:Mikrofoto.de-volvox-16.jpg">Frank Fox</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.en">CC BY-SA 3.0 DE</a>, via Wikimedia Commons.](/presentaciones/images/chlorophyta_volvox.jpg){#fig-volvox fig-align="center"}
+:::
+:::
+
+## Streptophyta {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+Grupo monofilético que comprende las plantas terrestres (Embryophyta) y las algas estreptofitas. Las algas estreptófitas son morfológicamente diversas y están representadas seis linajes: Mesostigmatophyceae, Chlorokybophyceae, Klebsormidiophyceae, Charophyceae, Coleochaetophyceae y Zygnematophyceae.
+
+::: fragment
+| Clase               | Número de géneros | Número de especies | Hábitat               |
+|-----------------|-----------------|-----------------|----------------------|
+| Mesostigmatophyceae | 1                 | 2                  | Agua dulce            |
+| Chlorokybophyceae   | 1                 | 5                  | Terrestre             |
+| Klebsormidiophyceae | 6                 | 42                 | Agua dulce, terrestre |
+| Coleochaetophyceae  | 2                 | 22                 | Agua dulce            |
+| Charophyceae        | 6                 | 395--450           | Agua dulce--salobre   |
+| Zygnematophyceae    | \>50              | 4000--13000        | Agua dulce, terrestre |
+
+: Número de especies de algas estreptófitas. {#tbl-algas-estreptofitas.}
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Cladograma del estado actual de las relaciones filogenéticas entre los Streptophyta a partir de los últimos estudios filogenéticos y filogenómicos.](/presentaciones/images/viridiplante_cladograma_02.jpeg){#fig-viridiplante-cladograma-02-1 fig-align="center" width="80%"}
+:::
+:::
+
+::: footer
+Tabla e imagen de @bierenbroodspot2024.
+:::
+
+## Conquistando el aire
+
+::: columns
+::: {.column .fragment width="50%"}
+> Las necesidades de un organismo fotosintético son relativamente sencillas: luz, agua, dióxido de carbono para la fotosíntesis, oxígeno para la respiración y algunos minerales. En tierra, la luz es abundante, al igual que el oxígeno y el dióxido de carbono, que circulan más libremente en el aire que en el agua. Además, el suelo suele ser rico en minerales. Así pues, el factor crítico para la transición a la tierra -o, como prefiere decir un investigador, «al aire»- es el agua. @evert2013
+:::
+
+::: {.column .fragment width="50%"}
+![Terrestrialización de los estreptofitos y colonización de hábitats terrestres por los cloroplastidios actuales. @devries2018.](/presentaciones/images/streptophyta_terrestrialization.jpg){#fig-conquistando-aire fig-align="center"}
+:::
+:::
+
+# Embryophyta {background-color="black" background-image="/presentaciones/images/valle_mifafi.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Valle_de_Mifaf%C3%AD_1.jpg">Adolfo</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.
+:::
+
+## Embryophyta: las plantas terrestres
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Alternancia de generaciones
+    -   Gametófito
+    -   Esporófito
+-   Gametangios especializados
+    -   Anteridios
+    -   Arquegonios
+-   Embrión
+-   Cutícula de cutina
+-   Parénquima
+-   Laminilla media
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Diversidad de las plantas terrestres. [Bewareofdog](https://commons.wikimedia.org/wiki/File:Plants.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.en), via Wikimedia Commons.](/presentaciones/images/embryophyta_diversidad.jpg){#fig-embryophyta-diversidad fig-align="center"}
+:::
+:::
+
+## Embryophyta: alternancia de generaciones
+
+![Alternancia de generaciones haplodiplóntica en las plantas terrestres. @simpson2019.](/presentaciones/images/embryophyta_ciclo_vida.png){#fig-embryophyta-ciclo-vida fig-align="center"}
+
+## Embryophyta: relaciones
+
+![Abreviaturas: Chloro, Chlorophyta; Chkb, Chlorokybophyceae; Klb, Klebsormidiophyceae; C, Charophyceae; Cole, Coleochaetophyceae; Zygnemato, Zygnematophyceae; Ho, hornworts; Lycophy, Lycophyta; Pterid., Pteridophyta. @puttick2018.](/presentaciones/images/viridiplante_arbol.jpg){#fig-viridiplante-cladograma-04-1 fig-align="center"}
+
+## Embryophyta: diversidad en el mundo
+
+::: columns
+::: {.column .fragment width="50%"}
+World Flora Online [@wfo] registra 380,153 nombres aceptados para Embryophyta
+
+::: incremental
+-   Anthocerotophyta 225
+-   Marchantiophyta 7,321
+-   Bryophyta 11,970
+-   Lycopodiophyta 1,516
+-   Polypodiophyta (Monilophyta) 12,688
+-   Gymnospermae 1134
+-   Angiospermae 345,299
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Diagrama simplificado para ilustrar las relaciones entre los principalres grupos de familias de plantas y el número de especies. @sotwpf2017.](/presentaciones/images/embryophyta_relaciones_diagrama.jpg){#fig-embryophyta-relaciones-diagrama fig-align="center"}
+:::
+:::
+
+## Embryophyta: diversidad en Colombia
+
+![@sibcolombia2025 reporta 37,718 especies de Embryophyta para Colombia. Angiospermas (32,343), Helechos (2,174), Musgos (1,312), Hepáticas (846), Gimnospermas (117), Antocerotas (19).](/presentaciones/images/embryophyta_diversidad_colombia.png){#fig-embryophyta-diversidad-colombia fig-align="center"}
+
+## Embryophyta: diversidad en Antioquia
+
+![@sibcolombia2025 reporta 13,581 especies de Embryophyta para Colombia. Angiospermas (11,526), Helechos (1,036), Musgos (580), Hepáticas (284), Gimnospermas (37), Antocerotas (3). Antioquia es el departamento con el mayor número de especies endémicas, así como de especies amenazadas.](/presentaciones/images/embryophyta_diversidad_antioquia.png){#fig-embryophyta-diversidad-antioquia fig-align="center"}
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram fig-align="center"}
+
+<!-- ## Embryophyta: relaciones -->
+
+<!-- ::: columns -->
+<!-- ::: {.column .incremental width="50%"} -->
+<!-- -   Bryophyta *s. l.* -->
+<!--     -   Anthocerophyta -->
+<!--     -   Setaphyta -->
+<!--         -   Marchantiophyta -->
+<!--         -   Bryophyta *s. s.* -->
+<!-- ::: -->
+
+<!-- ::: {.column .incremental width="50%"} -->
+<!-- -   Tracheophyta -->
+<!--     -   Lycopodiophyta -->
+<!--     -   Euphyllophyta -->
+<!--         -   Monilophyta -->
+<!--         -   Spermatophyta -->
+<!--             -   Gimnospermae -->
+<!--             -   Angiospermae -->
+<!-- ::: -->
+<!-- ::: -->
+
+::: footer
+*s. l.* sensu lato & *s. s.* sensu stricto
+:::
+
+# Bryophyta *sensu lato*
+
+## Bryophyta *sensu lato*
+
+::: columns
+::: {.column .fragment width="40%"}
+### Características
+
+::: incremental
+-   Gametofito
+    -   Dominante
+    -   Fotosintético
+    -   Persistente
+    -   Autónoma
+-   Esporofito
+    -   Relativamente pequeño
+    -   Efímero
+    -   Unido y dependiente del gametofito
+:::
+:::
+
+::: {.column .fragment width="60%"}
+![Diversidad de Bryophyta *s. l.*. @cabaña-fader.](/presentaciones/images/bryophyta_sl_diversidad.jpg){#fig-bryophyta_diversidad fig-align="center"}
+:::
+:::
+
+## Bryophyta *sensu lato*: relaciones
+
+::: columns
+::: {.column .fragment width="60%"}
+![Siete topologías en competencia entre embriófitas y traqueófitas. @puttick2018.](/presentaciones/images/embryophyta_relaciones_hipotesis.jpg){#fig-embryophyta_hipotesis fig-align="center"}
+:::
+
+::: {.column .fragment width="40%"}
+![Hipótesis de las relaciones de Embryophyta con las principales apomorfías. @simpson2019.](/presentaciones/images/embryophyta_apomorfias.png){#fig-bryophyta-apomorfias fig-align="center"}
+:::
+:::
+
+## Bryophyta *sensu lato*: comparación {.scrollable}
+
+|                               |                            Anthocerotophyta                            |                            Marchantiophyta                            |                                   Bryophyta                                  |
+|:-----------------------------:|:----------------------------------------------------------------------:|:---------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
+| **Gametófito**                | Taloso                                                                 | Taloso o folioso                                                      | Folioso                                                                      |
+| **Filidios**                  | Ausentes                                                               | Originados desde dos células iniciales, enteros o lobuldos, sin costa | Originados a partir de una célula inicial, Enteros, con o sin costa          |
+| **Inserción filidios**        | Ausentes                                                               | Con filidios de 2-3 filas o sin filidios                              | Con filidios dispuestos en espiral, ocasionalmente dispuestos en 2 o 3 filas |
+| **Cloroplastos**              | 1-4 de gran tamaño, con o sin un pirenoide                             | Numerosos, sin pirenoide                                              | Numerosos, sin pirenoide                                                     |
+| **Trígonos**                  | Ausentes                                                               | Usualmente presentes                                                  | Usualmente ausentes                                                          |
+| **Oleocuerpos**               | Ausentes                                                               | Usualmente presentes                                                  | Ausentes                                                                     |
+| **Rizoides**                  | Unicelular                                                             | Unicelular                                                            | Pluricelular                                                                 |
+| **Paráfisis**                 | Ausentes                                                               | Ausentes                                                              | Presentes                                                                    |
+| **Protonema**                 | Taloso, muy pequeño, produce sólo un gametófito                        | Taloso, muy pequeño, produce sólo un gametófito                       | Filamentoso, usualmente produce más de un gametófito                         |
+| **Esporofito**                | Crece por meristema basal                                              | Crece por una célula apical                                           | Crece por una célula apical                                                  |
+| **Seta**                      | Ausente                                                                | Frágil, sin pigmentos, puede estar ausente.                           | Firme y pigmentada                                                           |
+| **Cápsula**                   | Cilíndrica a largamente filamentosa                                    | Redondeada a cilíndrica                                               | Redondeada a cilíndrica                                                      |
+| **Dehiscencia de la cápsula** | Apertura gradualmente desde el ápice a la base, a través de dos valvas | Apertura de una vez, por medio de 1-4 valvas                          | Apertura de una vez, a través del opérculo y el peristoma                    |
+| **Maduración de las esporas** | Asincrónico                                                            | Sincrónico, antes de la elongación de la seta                         | Sincrónico, después de la elongación de la seta                              |
+| **Columela**                  | Presente                                                               | Ausente                                                               | Presente                                                                     |
+| **Estomas**                   | Presentes                                                              | Ausentes                                                              | Presentes                                                                    |
+| **Caliptra**                  | Ausente                                                                | En la base del esporófito                                             | En el ápice del esporófito                                                   |
+
+: Principales características de los grupos de Bryophyta *sensu lato*. @UCM2025. {#tbl-bryophyta-comparacion}
+
+# Anthocerotophyta {background-color="black" background-image="/presentaciones/images/anthocerotophyta.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Anthoceros_sp.jpg">Bramadi Arya</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>.
+:::
+
+## Anthocerotophyta: antoceros
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Gametofito
+    -   Taloso
+    -   1-8 cloroplastos con pirinoides
+    -   Rizoides unicelulares
+    -   Gametangios endogénos
+    -   Simbiosis con cianobacterias (*Nostoc*)
+-   Esporofito
+    -   Aéreo, alargado, cilíndrico, fotosintético y relativamente longevo
+    -   Meristema basal (indeterminado)
+    -   Estomas
+    -   Columna central única de tejido estéril (columela)
+    -   Pseudoeláteres
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A. Población de *Anthoceros sp.* B. Gametofito con esporofito. C-E. Base del esporofito. El collar es tejido gametofítico que rodea el meristemo intercalar del esporofito F. Sección longitudinal del esporofito. @simpson2019.](/presentaciones/images/anthocerotophyta_caracteristicas_01.jpg){#fig-anthocerotophyta-caracteristicas fig-align="center"}
+:::
+:::
+
+## Anthocerotophyta: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Ordenes: 5
+    -   Familias: 5
+    -   Géneros: 12
+    -   Especies: 225
+:::
+
+::: {.column .incremental width="50%"}
+-   Colombia
+    -   Familias: 4
+    -   Géneros: 7
+    -   Especies: 13
+    -   Endémicas: 2
+:::
+:::
+
+::: fragment
+![Relaciones de Anthocerotophyta. @cole2023.](/presentaciones/images/anthocerotophyta_cladograma.png){#fig-anthocerotophyta-relaciones fig-align="center"}
+:::
+
+::: footer
+Cifras de @brinda2025, @catálogo2016a, @wfo.
+:::
+
+## Anthocerotophyta: morfología
+
+::: columns
+::: {.column .fragment width="50%"}
+![Ciclo de vida de Anthocerotophyta. <a href="https://commons.wikimedia.org/wiki/File:Hornwort_life_cicle_svg_diagram-es.svg">LadyofHats, Alexespinosaco</a>, CC0, via Wikimedia Commons.](/presentaciones/images/hornwort_life_cicle_svg_diagram-es.svg){#fig-anthocerotophyta-morfologia-1 fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Algunas características morfológicas de *Anthoceros*. A. Esporas en germinación. B. Vista superficial del talo. C. Rizoides. D. Esporofitos creciendo sobre el gametofito. E. Talo con canales de mucílago. F. Vista superficial de la cámara anteridial con anteridios amarillos. G. Anteridio extraído de la cámara. H. Anteridios. I. Espermatozoides biflagelados. J. Arquegonios. L. Plástidos individuales en cada célula. M. Talo con un arquegonio abierto. N. Estoma. O. Espora. @frangedakis2021.](/presentaciones/images/anthocerotophyta_caracteristicas_02.jpg){#fig-anthocerotophyta-caracteristicas fig-align="center" width="50%"}
+:::
+:::
+
+
+## Anthocerotophyta: ciclo de vida
+
+![Ciclo de vida de Anthocerotophyta. @frangedakis2021.](/presentaciones/images/anthocerotophyta_ciclo.jpg){#fig-anthocerotophyta-ciclo fig-align="center"}
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-02 fig-align="center"}
+
+::: footer
+*s. l.* sensu lato & *s. s.* sensu stricto
+:::
+
+# Marchantiophyta {background-color="black" background-image="/presentaciones/images/marchantiophyta.jpg" background-size="contain"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Jung-Koch-Quentell_Wall_Chart_Lebermoos.jpg">Authors are Heinrich Jung, Gottlieb von Koch, Friedrich Quentell</a>, Public domain, via Wikimedia Commons.
+:::
+
+## Marchantiophyta: hepáticas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Gametofito
+    -   Folioso o taloso 
+    -   Poros
+    -   Rizoides generalmente unicelulares
+    -   Cuerpos oleíferos
+    -   Gametangios exógenos
+-   Esporofito
+    -   Relativamente pequeño y efímero
+    -   Sin estomas
+    -   No fotosintético
+    -   Homospórico
+    -   Eláteres
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![«Hepaticae», 1904. <a href="https://commons.wikimedia.org/wiki/File:Assortment_of_Hepaticae_from_Kunstformen_der_Natur_(1904),_plate_82.jpg">Ernst Haeckel</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/marchantiophyta_haeckel.jpg){#fig-marchantiophyta-ilustacion fig-align="center" width="65%"}
+:::
+:::
+
+## Marchantiophyta: talosas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Entre 10 y 30 células de grosos
+-   Diferenciado en parte dorsal y ventral
+-   Rizoides uniseriados y filamentosos
+-   Poros
+-   En *Marchantia* gametangios en estructuras especializadas, gametangióforos
+    -   Anteridióforos
+    -   Arquegonióforos
+    -   Otras hepáticas, no tienen los gametangióforos
+-   Reproducción asexual por propágulos o gemas en copas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A-B. Hepática talosa. C-I. Anteridióforos y Arquegonióforos. J-K. Tejido esporógeno. L. Rizoides y los poros. @simpson2019.](/presentaciones/images/marchantiophyta_talosas.jpg){#fig-marchantiophyta-talosas fig-align="center" width="70%"}
+:::
+:::
+
+## Marchantiophyta: ciclo de vida
+
+![Ciclo vital de *Marchantia*, una hepática talosa. @nabors2006.](/presentaciones/images/marchantiophyta_ciclo_01.jpg){#fig-marchantiophyta-ciclo-01 fig-align="center"}
+
+## Marchantiophyta: ciclo de vida
+
+![Ciclo vital de *Marchantia*, una hepática talosa. @mauseth2016.](/presentaciones/images/marchantiophyta_ciclo_02.jpg){#fig-marchantiophyta-ciclo-02 fig-align="center"}
+
+## Marchantiophyta: foliosas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Constituyen más del 80 % de las especies
+-   Eje dorsiventral a forma de «tallo» con tres filas de «hojas» de tamaño variable
+-   Rizoides unicélulares
+-   Anteridios en ramas laterales (androceo)
+-   Arquegonios en el extremo del eje (perianto)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+
+![Hepáticas foliosas. @simpson2019.](/presentaciones/images/marchantiophyta_foliosa_1.jpg){#fig-marchantiophyta-foliosa-01 fig-align="center"}
+
+![A. Disposición característica de las hojas. B. Cápsula y el tallo del esporófito. C. Los anteridios están contenidos en el androecio. El perianto contiene el arquegonio y el esporofito en desarrollo. @evert2013.](/presentaciones/images/marchantiophyta_foliosa_2.png){#fig-marchantiophyta-foliosa-02 fig-align="center" width="65%"}
+:::
+:::
+
+## Marchantiophyta: ciclo de vida
+
+![Ciclo vital de una hepática foliosa @cabaña-fader.](/presentaciones/images/marchantiophyta_ciclo_03.jpg){#fig-marchantiophyta-ciclo-03 fig-align="center"}
+
+## Marchantiophyta: foliosas y talosas
+
+![Morfología de Marchantiophyta @simpson2019.](/presentaciones/images/marchantiophyta_gametofito_01.png){#fig-marchantiophyta-gametofito_01 fig-align="center"}
+
+## Marchantiophyta: foliosas y talosas
+
+![Morfología de Marchantiophyta. A. Hepática talosas con gametangióforos. B. Hepática foliosa. C. Copa. D-E. Hojas y esporofito de Hepática foliosa. F. Esporas y elateres.](/presentaciones/images/marchantiophyta_morfologia.jpg){#fig-marchantiophyta-gametofito_02 fig-align="center"}
+
+## Marchantiophyta: foliosas y talosas
+
+![Relaciones filogenéticas de Marchantiophyta y el tipo de gametofito. @li2024.](/presentaciones/images/marchantiophyta_gametofito_02.png){#fig-marchantiophyta-gametofito_03 fig-align="center"}
+
+## Marchantiophyta: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Ordenes: 23
+    -   Familias: 89
+    -   Géneros: 410
+    -   Especies: 7321
+-   Colombia
+    -   Familias: 38
+    -   Géneros: 134
+    -   Especies: 703
+    -   Endémicas: 37
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Marchantiophyta @cole2023.](/presentaciones/images/marchantiophyta_cladograma.png){#fig-marchantiophyta-relaciones fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @brinda2025, @catálogo2016a, @wfo.
+:::
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-03 fig-align="center"}
+
+::: footer
+*s. l.* sensu lato & *s. s.* sensu stricto
+:::
+
+# Bryophyta {background-color="black" background-image="/presentaciones/images/bryophyta.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Alishan_Forest_Stump_Moss.JPG">User: (WT-shared) Jpatokal at  wts wikivoyage</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.
+:::
+
+## Bryophyta *sensu stricto*: musgos
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Gametofito folioso
+    -   Eje erecto o rastrero (caulidio)
+    -   Hojas pequeñas, delgadas y sésiles (filidios), con costa
+    -   Rizoides pluricelulares y ramificados
+    -   Anteridias y Arquegonios suelen producirse en el ápice
+-   Esporofito
+    -   Aéreo y alargado
+        -   Seta, opérculo y caliptra
+-   Células Hidroides y Leptoides
+:::
+
+::: {.column .fragment width="50%"}
+![Muscinae (1904). <a href="https://commons.wikimedia.org/wiki/File:Haeckel_Muscinae.jpg">Ernst Haeckel</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/bryophyta_haeckel.jpg){#fig-bryophyta-haeckel fig-align="center" width="65%"}
+:::
+:::
+
+## {background-color="black" background-image="/presentaciones/images/bryophyta_morfologia_01.jpg" background-size="contain"}
+
+::: footer
+@herbariocib2024.
+::: 
+
+## Bryophyta: morfología
+
+::: columns
+::: {.column .fragment width="50%"}
+![Morfología de Bryophyta. @UCM2025.](/presentaciones/images/bryophyta_esquema.png){#fig-bryophyta-esquema fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Morfología de Bryophyta. A. Protonema. B. Gametofito. C. Filidio. D. Gametofito de mostrando anteridios en las puntas de las ramas. E. Anteridios. F. Arquegonios. G. Esporofitos. H. Desarrollo del esporofito. I. Cápsula. @simpson2019.](/presentaciones/images/bryophyta_morfologia_02.jpg){#fig-bryophyta-esquema fig-align="center" width="70%"}
+:::
+:::
+
+## Hidroides y leptoides
+
+![Las células encargadas de la conducción del agua se conocen como hidroides, se asemejan a los elementos traqueales. Las células encargadas de la conducción de nutrientes, conocidas como leptoides, rodean el cordón de hidroides, se asemejan a los tubos cribosos.](/presentaciones/images/bryophyta_dawsonia.jpg){#fig-bryophyta-dawsonia fig-align="center"}
+
+
+
+## Bryophyta: esporofito
+
+![Esporofito de Bryophyta. A. Esporofito. B. Vista externa de la cápsula. C. Vista en mostrando la columela y las esporas. Vista tras la caída del opérculo. E. Dientes del peristoma. @mauseth2016.](/presentaciones/images/bryophyta_esporofito.jpg){#fig-bryophyta-esporofito fig-align="center"}
+
+## Bryophyta: ciclo de vida
+
+![Ciclo vital de Bryophyta, un musgo. @nabors2006.](/presentaciones/images/bryophyta_ciclo_01.jpg){#fig-bryophyta-ciclo-01 fig-align="center"}
+
+## Bryophyta: ciclo de vida
+
+![Ciclo vital de Bryophyta, un musgo. @mauseth2016.](/presentaciones/images/bryophyta_ciclo_02.jpg){#fig-bryophyta-ciclo-02 fig-align="center"}
+
+## Bryophyta: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Ordenes: 46
+    -   Familias: 142
+    -   Géneros: 1009
+    -   Especies: 11970
+-   Colombia
+    -   Familias: 65
+    -   Géneros: 261
+    -   Especies: 932
+    -   Endémicas: 52
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Bryophyta @cole2023.](/presentaciones/images/bryophyta_cladograma.png){#fig-bryophyta-relaciones fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @brinda2025, @catálogo2016a, @wfo.
+:::
+
+## *Sphagnum*: musgos de turbera
+
+![A. Gametofito y esporofitos de *Sphagnum*. B. Hoja de *Sphagnum* con células vivas (verde), ricas en cloroplastos y células hialinas grandes y muertas. C.  Explotación de turba. D. Mujeres fabricando vendajes para heridas con *Sphagnum* durante la Primera Guerra Mundial.](/presentaciones/images/bryophyta_sphagnum.jpg){#fig-bryophyta-sphagnum fig-align="center"}
+
+## Bryophyta *sensu lato*: resumen {.scrollable}
+
+| Característica | Anthocerotophyta (antoceros)                                                                                                                                                                                  | Marchantiophyta (hepáticas)                                                                                                                                                 | Bryophyta (musgos)                                                                                                                                                                                                     |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Gametófito** | - Taloso <br>- Rizoides unicelulares <br>- Células con un solo cloroplasto                                                                                                                                    | - Taloso o folioso <br>- Rizoides unicelulares <br>- Células con numerosos cloroplastos <br>- Pueden producir gemas <br>- Crecimiento desde el meristemo apical             | - Folioso <br>- Rizoides multicelulares <br>- Células con numerosos cloroplastos <br>- Pueden producir gemas <br>- Crecimiento apical en *Bryidae* <br>- Algunas con leptóides e hidroides no lignificados             |
+| **Esporófito** | - Pequeño <br>- No ramificado <br>- Nutricionalmente dependiente del gametófito <br>- Con pie y esporangio cilíndrico con meristemo <br>- Con cutícula y estomas <br>- Sin tejidos conductores especializados | - Pequeño <br>- No ramificado <br>- Nutricionalmente dependiente del gametófito <br>- Algunos con solo esporangio, otros con pie corto, seta y esporangio <br>- Sin estomas | - Pequeño <br>- No ramificado <br>- Nutricionalmente dependiente del gametófito <br>- Con pie, seta larga y esporangio en *Bryidae* <br>- Con estomas <br>- Algunas especies con leptóides e hidroides no lignificados |
+| **Hábitat**    | - Húmedo y tropical                                                                                                                                                                                           | - Mayormente húmedo y tropical <br>- Algunas acuáticas <br>- A menudo epífitas                                                                                              | - Templado y tropical <br>- Algunas especies en el Ártico y la Antártida <br>- Muchas en hábitats secos <br>- Algunas acuáticas                                                                                        |
+
+: Principales características de los grupos de Bryophyta *sensu lato*. Modificado de @evert2013. {#tbl-bryophyta-resumen-02}
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-04 fig-align="center"}
+
+::: footer
+*s. l.* sensu lato & *s. s.* sensu stricto
+:::
+
+# Tracheophyta {background-image="/presentaciones/images/tejidos_vasculares.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Herbaceous_Dicot_Stem_Vascular_Bundles_in_Older_Helianthus_(23669988488).jpg">Berkshire Community College  Bioscience Image Library</a>, CC0, via Wikimedia Commons.
+:::
+
+## Embryophyta: alternancia de generaciones
+
+![Alternancia de generaciones haplodiplóntica en las plantas terrestres. @simpson2019.](/presentaciones/images/embryophyta_ciclo_vida.png){#fig-embryophyta-ciclo-vida-02 fig-align="center"}
+
+## Tracheophyta: plantas vasculares
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Esporofito ramificado, independiente y de vida larga
+-   Paredes celulares secundarias lignificadas
+-   Esclerenquima
+-   Elementos traqueales (xilema)
+-   Elementos cribosos (floema)
+-   Endodermis
+-   Raíces
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Representantes de los cuatro linajes principales de traqueófitas: *Lycopodiella inundata* (Lycopodiophyta), *Polypodium vulgare* (Monilophyta), *Wollemia nobilis* (Gimnospermae), *Papaver argemone* (Angiospermae). <a href="https://commons.wikimedia.org/wiki/File:Tracheophyta.jpg">Kostka Martin</a>, CC0, via Wikimedia Commons.](/presentaciones/images/tracheophyta.jpg){#fig-tracheophyta fig-align="center" width="65%"}
+:::
+:::
+
+## Tracheophyta: relaciones
+
+![Hipótesis de las relaciones de Tracheophyta con las principales apomorfías. @simpson2019.](/presentaciones/images/tracheophyta_apomorfias.png){#fig-tracheophyta-apomorfias fig-align="center"}
+
+# Lycopodiophyta {background-color="black" background-image="/presentaciones/images/lycopodiophyta.jpg" background-size="contain"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Spinulum_annotinum_15-p.bot-lyco.anno-003.jpg">Laval University</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.
+:::
+
+## Lycopodiophyta
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Raíces dicopodiales con protoxilema endarco
+-   Tallo con protoxilema exarco
+-   Hojas licofilas o micrófilas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Tipos de xilema primario según su localización. Exarco: se desarrolla desde la periferia hacia el centro del órgano (crecimiento centrípeto). Endarco: se desarrolla desde el centro hacia la periferia del órgano (crecimiento centrífugo). @perez-leal2017.](/presentaciones/images/xilema_tipos.jpg){#fig-xilema-tipos fig-align="center" width="30%"}
+:::
+:::
+
+::: fragment
+![A-B. Corte transversal del tallo de *Lycopodium* mostrando el protoxilema exarco (hacia la periferia del tallo). C. Estructura del micrófilo. @simpson2019.](/presentaciones/images/lycopodiophyta_microphyll.jpg){#fig-lycopodiophyta-microphyll fig-align="center" width="50%"}
+:::
+
+## Lycopodiophyta: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Ordenes: 3
+    -   Familias: 3
+    -   Géneros: 19
+    -   Especies: 1516
+:::
+
+::: {.column .fragment width="50%"}
+-   Colombia
+    -   Ordenes: 3
+    -   Familias: 3
+    -   Géneros: 10
+    -   Especies: 184
+    -   Endémicas: 15
+:::
+:::
+
+::: fragment
+![Relaciones de Lycopodiophyta. @cole2022.](/presentaciones/images/lycopodiophyta_cladograma.png){#fig-lycopodiophyta-cladograma fig-align="center"}
+:::
+
+::: footer
+Cifras de @catálogo2016a, @ppgi2016, @wfo.
+:::
+
+## Lycopodiales (Lycopodiaceae): licopodios
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Hierbas perennes, erectas, postradas o pendulas
+-   Microfilos espiralados o verticilados, 
+-   Homospóricos
+-   Esporangios en la cara adaxial de los esporofilos (Hoja modificada que porta esporangios), en estrobilos cuando están agrupados.
+-   Raiz y tallo dicotómicamente ramificados
+
+:::
+
+::: {.column .fragment width="50%"}
+![Lycopodiophyta (1904). <a href="https://commons.wikimedia.org/wiki/File:Lycopodium_clavatum_Thom%C3%A9.png">Otto Wilhelm Thomé</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/lycopodiophyta_ilustracion.jpg){#fig-lycopodiales-ilustracion fig-align="center" width="55%"}
+:::
+:::
+
+## Lycopodiales: morfología
+
+::: columns
+::: {.column .fragment width="50%"}
+![A. *Huperzia lucidula* . B. *Lycopodium clavatum*. C. Esporangios de *H. lucidula*. D. Estróbilos de *Lycopodium annotinum*. E. Esporófilos de *L. clavatum*, vista adaxial (izquierda) y vista abaxial (derecha). F. *Huperzia squarrosa*. G. Estróbilos de *H. squarrosa*. H. Estróbilos de *Phylloglossum drummondii*. @simpson2019.](/presentaciones/images/lycopodiaceae.jpg){#fig-lycopodiales-lycopodiaceae fig-align="center" width="65%"}
+:::
+
+::: {.column .fragment width="50%"}
+![Esporofilos de *Huperzia lucidula* y estróbilos de *Lycopodium lagopus*. @evert2013.](/presentaciones/images/lycopodiaceae_sporophylls_strobili.jpg){#fig-lycopodiales-sporophylls-strobili fig-align="center"}
+:::
+:::
+
+## Lycopodiales: ciclo de vida
+
+![Ciclo de vida de *Lycopodium lagopus*. @evert2013.](/presentaciones/images/lycopodiaceae_ciclo.png){#fig-lycopodiales-ciclo-strobili fig-align="center"}
+
+## Lycopodiales: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Familias: 1
+    -   Géneros: 17
+    -   Especies: 512
+-   Colombia
+    -   Familias: 1
+    -   Géneros: 8
+    -   Especies: 83
+    -   Endémicas: 10
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Lycopodiaceae. Basado en @chen2021 via [Wikipedia](https://en.wikipedia.org/w/index.php?title=Lycopodiaceae&oldid=1272170405).](/presentaciones/images/lycopodiaceae_cladograma.png){#fig-lycopodiales-cladograma fig-align="center"}
+:::
+:::
+
+## Isoetales (Isoetaceae): isoetes
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas perennes, generalmente acuáticas o terrestres.
+-   Roseta basal de hojas micrófilas y liguladas
+    -   Hojas presentan una vaina basal y son lineares a aciculares en el ápice
+-   Heterospóricas
+    -   Megasporangios y microsporangios adaxiales ubicados dentro de la vaina basal de la hoja.
+-   Gametofito endospórico
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Selaginella (1885). [Otto Wilhelm Thomé](https://commons.wikimedia.org/wiki/File:Illustration_Isoetes_lacustris0.jpg), Public domain, via Wikimedia Commons.](/presentaciones/images/isoetaceae_ilustracion.jpg){#fig-isoetales-ilustracion fig-align="center" width="55%"}
+:::
+:::
+
+## Isoetales: morfología
+
+::: columns
+::: {.column .fragment width="50%"}
+![A. *Isoetes howellii*. B. Esporangios. C. Esporófilos de *Isoetes orcuttii*. D-E. Megasporangio. F-I. Microsporangio. @simpson2019.](/presentaciones/images/isoetaceae.jpg){#fig-isoetales-morfologia-01 fig-align="center" width="75%"}
+:::
+
+::: {.column .fragment width="50%"}
+![Representación de una planta de Isoetes. @evert2013.](/presentaciones/images/isoetaceae_morfologia.png){#fig-isoetales-morfologia-02 fig-align="center"}
+:::
+:::
+
+## Isoetales: ciclo de vida 
+
+::: columns
+::: {.column .fragment width="50%"}
+![Ciclo de vida de *Isoetes*. @avila2009.](/presentaciones/images/isoetaceae_ciclo_01){#fig-isoetales-ciclo-01 fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Ciclo de vida de *Isoetes*. <a href="https://commons.wikimedia.org/wiki/File:Isoetes.reproduction.tif">John Game, Robbin Moran, Aidan Harrington</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.](/presentaciones/images/isoetaceae_ciclo_02){#fig-isoetales-ciclo-02 fig-align="center" width="75%"}
+:::
+:::
+
+## Isoetales: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Familias:  1
+    -   Géneros:  1
+    -   Especies:  239
+-   Colombia
+    -   Familias: 1
+    -   Géneros: 1
+    -   Especies: 10
+    -   Endémicas: 2
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Isoetaceae. @wood2020.](/presentaciones/images/isoetaceae_cladograma.png){#fig-isoetales-cladograma fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @ppgi2016, @wfo.
+:::
+
+## Selaginellales (Selaginellaceae): selaginelas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas erectas a postradas
+-   Tallos dicotómicamente ramificados
+-   Micrófilos en espiral, homomórficos (isofilia) o dimórficos (anisofilia)
+-   Esporangios heterospóricos
+    -   Microsporangios y megasporangios en las axilas de esporófilos (megasporofilos y microsporofilos) ligulados dentro de estróbilos terminales
+-   Gametofito endospórico
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Selaginella (1885). [Otto Wilhelm Thomé](https://commons.wikimedia.org/wiki/File:Illustration_Selaginella_selaginoides0.jpg), Public domain, via Wikimedia Commons.](/presentaciones/images/sellaginellaceae_ilustracion.jpg){#fig-selaginellales-ilustracion fig-align="center" width="55%"}
+:::
+:::
+
+## Selaginellales: morfología
+
+::: columns
+::: {.column .fragment width="50%"}
+![A. Hojas isomorfas de *Selaginella bigelovii*. B. Hojas dimórficas de *S. apoda*. C. Hojas dimórfica. D. Lígula. E. Estróbilo. F. Microsporangio y del megasporangio. G. Microsporófilo con microsporangio y megasporófilo con megasporangio. H. Estróbilo. I. Microsporangio. J. Megasporangio. K. Microsporas y megasporas dispersas. @simpson2019.](/presentaciones/images/sellaginellaceae.jpg){#fig-selaginellales-morfologia_01 fig-align="center" width="65%"}
+:::
+
+::: {.column .fragment width="50%"}
+![Morfología general de una Selaginella. A. Hábito de crecimiento erecto. B. Vista ventral. C. Vista dorsal. D. Micrófilo lateral. E. Micrófilos dorsales. F. Esporófilo. @vega-betancur2023.](/presentaciones/images/sellaginellaceae_morfologia.png){#fig-selaginellales-morfologia_02 fig-align="center" width="60%"}
+:::
+:::
+
+## Selaginellales: ciclo de vida
+
+![Ciclo vital de *Selaginella*. @nabors2006.](/presentaciones/images/sellaginellaceae_ciclo_01.png){#fig-selaginellales-ciclo-01 fig-align="center"}
+
+## Selaginellales: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Familias: 1
+    -   Géneros: 1
+    -   Especies: 765
+-   Colombia
+    -   Familias: 1
+    -   Géneros: 1
+    -   Especies: 91
+    -   Endémicas: 3
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Selaginellaceae. @zhou2023. Via [Wikipeadia](https://en.wikipedia.org/w/index.php?title=Lycopodiaceae&oldid=1272170405)](/presentaciones/images/lycopodiaceae_cladograma.png){#fig-lycopodiales-cladograma fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @ppgi2016, @wfo.
+:::
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-05 fig-align="center"}
+
+# Euphyllophyta {background-color="black" background-image="/presentaciones/images/euphyllophyta.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Green_leaf_texture.jpg">Martin Vorel martinvorel.com</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.
+:::
+
+## Euphyllophyta
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Raíz monopodial con protoxilema exarco
+-   Hojas eufilas o megafilas
+    -   Laguna foliar
+    -   Nervaduras o venación
+-   Inversión de 30 kilobases en el ADN del cloroplasto
+
+::: fragment
+![Hojas de diferentes plantas.](/presentaciones/images/hoja_comparacion.png){#fig-euphyllophyta-hojas fig-align="center"}
+:::
+:::
+
+::: {.column .fragment width="50%"} 
+![Estructura y anatomía de las eufilas, destacando la presencia de múltiples venas y una laguna foliar. @evert2013.](/presentaciones/images/euphyllophyta_euphyll.png){#fig-euphyllophyta-euphyll fig-align="center" width="60%"}
+:::
+:::
+
+# Monilophyta {background-color="black" background-image="/presentaciones/images/monilophyta.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Fern_sori_pattern.jpg">L. Shyamal</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.
+:::
+
+## Monilophyta: helechos
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+::: incremental
+-   Sifonostela (ectofloica, anfifloica, dictiostela)
+-   Protoxilema mesarco
+:::
+
+::: fragment
+![Tipos de xilema primario según su localización. Mesarco: el protoxilema se enucntra en el centro y el metaxilema se diferencia rardialmente (centrípetamente y centrífugamente). @perez-leal2017.](/presentaciones/images/xilema_tipos.jpg){#fig-xilema-tipos_02 fig-align="center" width="50%"}
+:::
+:::
+
+::: {.column .fragment width="50%"}
+
+![Tipos de haces vascualres y estelas. @megías-pacheco2017.](/presentaciones/images/vascular_organizacion.png){#fig-estelas fig-align="center" width="60%"}
+:::
+:::
+
+::: footer
+Monilophyta \= Polypodiophyta
+:::
+
+## Monilophyta: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Ordenes: 11
+    -   Familias: 50
+    -   Géneros: 366
+    -   Especies: 12688
+-   Colombia
+    -   Familias: 36
+    -   Géneros: 127
+    -   Especies: 1459
+    -   Endémicas: 89
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Monilophyta. @ppgi2016.](/presentaciones/images/monilophyta_cladograma.jpg){#fig-monilophyta-cladograma fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @ppgi2016, @wfo.
+:::
+
+## Pteridophyta: helechos y afines
+
+![Plantas vasculares: Árbol filogenético consensuado al año 2004. <a href="https://commons.wikimedia.org/wiki/File:Filogenia2004.gif">Pryer et al. 2004. Spanish translation by User:RoRo</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/pteridophyta.gif){#fig-pteridophyta.gif fig-align="center"}
+
+## Equisetopsida (Equisetaceae): equisetos
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas perennes rizomatosas
+-   Tallos acanalados, a menudo con canales internos huecos
+-   Hojas reducidas y verticiladas, generalmente fusionadas en los márgenes, no fotosintéticas
+-   Células epidérmicas con sílice y canales internos
+-   Esporangióforos, con un eje peltado que lleva esporangios, organizados en un estróbilo
+-   Esporas fotosintéticas con eláteres
+-   Homospóricos
+-   Una familia, un género y 41 especies (4 en Colombia)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![*Equisetum*. <a href="https://commons.wikimedia.org/wiki/File:The_ferns_of_Great_Britain,_and_their_allies_the_club-mosses,_pepperworts,_and_horsetails_(Pl._38)_(8515414457).jpg">Pratt, Anne; Pratt, Anne; Society for Promoting Christian Knowledge (Great Britain)</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/equisetopsida_ilustracion.jpg){#fig-equisetopsida-ilustracion fig-align="center" width="50%"}
+:::
+:::
+
+## Equisetopsida: morfología
+
+::: columns
+::: {.column .fragment width="50%"}
+![Morfología general de *Equisetum*. ](/presentaciones/images/equisetopsida_morfologia.jpg){#fig-equisetopsida-morfologia_01 fig-align="center" width="75%"}
+:::
+
+::: {.column .fragment width="50%"}
+![A-C. Tallo de *Equisetum*. D-E. *Equisetum laevigatum*. F. Esporangióforo. G-H. Esporas y élateres. I-J. Tallos estériles y fotosintéticos. K. Tallo reproductivo con un estróbilo terminal. L. Estróbilo mostrando los esporangióforos. @simpson2019.](/presentaciones/images/equisetopsida.jpg){#fig-equisetopsida-morfologia_02 fig-align="center" width="75%"}
+:::
+:::
+
+## Equisetopsida: ciclo de vida
+
+![Ciclo de vida de *Equisetum*. @evert2013.](/presentaciones/images/equisetopsida_ciclo.png){#fig-equisetopsida-ciclo fig-align="center" width="65%"}
+
+## Psilotopsida
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Homospóricos
+-   Esporangio eusporangiado ubicado adaxialmente
+-   Raíz sin pelos radicales/ramificaciones o ausente
+-   Gametofito no fotosintético y subterráneo
+-   Dos ordenes Ophioglossales y Psilotales
+    -   Dos familias, 13 géneros, 159 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![*Ophioglossum vulgatum* y *Botrychium lunaria* (1985). [Otto Wilhelm Thomé](https://commons.wikimedia.org/wiki/File:Illustration_Ophioglossum_vulgatum0.jpg), Public domain, via Wikimedia Commons.](/presentaciones/images/psilotopsida.jpg){#fig-psilotopsida-ilustracion fig-align="center" width="50%"}
+:::
+:::
+
+## Ophioglossales {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas perennes, homospóricas y eusporangiadas
+-   Hojas simples a compuestas, con un segmento fértil pedunculado que contiene eusporangios
+-   Gametofitos no fotosintéticos
+:::
+:::
+
+::: {.column .fragment width="50%"}
+-   Mundial
+    -   Géneros: 11
+    -   Especies: 129  
+-   Colombia
+    -   Géneros: 2
+    -   Especies: 6 
+:::
+:::
+
+::: fragment
+![A-B. Lámina vegetativa y el segmento fértil de *Botrychium sp.* C. Segmento fértil de *Ophioglossum californicum*. @simpson2019.](/presentaciones/images/ophioglossales.jpg){#fig-ophioglossales fig-align="center" width="75%"}
+:::
+
+## Psilotales
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas perennes rizomatosas y sin raíces
+-   Tallos aéreos fotosintéticos, simples o dicotómicamente ramificados
+-   Hojas simples, espiraladas o dísticas, carecen de vascularización (enaciones) o poseen una única vena (microfilas)
+-   Esporangios son 2- o 3-sinangiados
+-   2 géneros, 20 especies. Colombia: 1 género, 2 especies.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![*Psilotum nudum*. A. Planta entera. B. Brotes aéreos dicotómicos. C. Hojas reducidas o enaciones. D-E. Sinangio. F. Esporas monolete. G. Corte transversal del tallo. @simpson2019.](/presentaciones/images/psilotales.jpg){#fig-psilotales fig-align="center"}
+:::
+:::
+
+::: footer
+Sinangio: conjunto de esporangios con sus paredes fusionadas.
+:::
+
+## Psilotales: ciclo de vida
+
+![Ciclo de vida de *Psilotum*. @nabors2006.](/presentaciones/images/psilotales_ciclo.jpg){#fig-psilotales-ciclo-01 fig-align="center"}
+
+## Marattiopsida
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Helechos terrestres de gran tamaño con canales de mucílago
+-   Sifonostela policíclica
+-   Hojas (frondas) varían de simples a varias veces pinnadas.
+-   Esporangios eusporangiados, abaxiales e intramarginales, y en algunos casos están fusionados en sinangios.
+-   6 géneros, 179 especies. Colombia: 2 géneros, 23 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A,H. Hojas compuestas bipinnadas. B. Peciolos hinchados (pulvínulos) y estípulas persistentes. C. Sifonostela policíclica. D. Soros. E. Eusporangios no fusionados. F. Hoja pinnada compuesta. G. Sinangio. I-J. Folíolos. K. Sinangios. @simpson2019.](/presentaciones/images/marattiopsida.jpg){#fig-marattiopsida fig-align="center" width="65%"}
+:::
+:::
+
+## Polypodiopsida: helechos leptosporangiados
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas o árboles perennes, con la excepción de algunos helechos acuáticos
+-   La mayoría presenta rizomas
+-   Esporangio leptosporangiado
+-   Soros con o sin indusio
+-   Frondas con prefoliación circinada
+-   Esporas triletes o monoletes
+-   Gametofito típicamente superficial y tiene rizoides
+-   7 ordenes, 46 familias, 346 géneros, 12309 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A-B. *Cyathea medullaris*, uno de los helecho arborescente más altos del mundo. C. Tronco de un helecho. D. Pinna. E. Hoja. F. Detalle de la pinna. G. Soros. H. Corte de la base del pecíolo. I-J. Soro, antes y después de dehiscencia. K. Leptosporangio. @simpson2019.](/presentaciones/images/polypodiopsida_cyatheales.jpg){#fig-polypodiopsida-cyatheales fig-align="center" width="75%"}
+:::
+:::
+
+## Eusporangio y leptosporangio
+
+![Desarrollo y estructura de los dos principales tipos de esporangios. A. El eusporangio se origina a partir de una serie de células parentales superficiales o iniciales. B. El leptosporangio se desarrolla a partir de una única célula inicial. @evert2013.](/presentaciones/images/eusporangia_leptosporangia.jpg){#fig-eusporangia-leptosporangia fig-align="center" width="75%"}
+
+## Polypodiopsida: morfología
+
+![A-B. Rizomas. C. Morfología de la hoja. D. Pecíolo. E. Brotes de helecho. @simpson2019.](/presentaciones/images/polypodiopsida_morfologia_01.jpg){#fig-polypodiopsida-morfologia-01 fig-align="center" width="75%"}
+
+## Polypodiopsida: morfología
+
+![A-C. Venación. D-E. Escama. G-J. Leptosporangio. K. Soro. @simpson2019.](/presentaciones/images/polypodiopsida_morfologia_02.jpg){#fig-polypodiopsida-morfologia-02 fig-align="center" width="75%"}
+
+## Polypodiopsida: morfología
+
+![A-B. Soro exindusiado. C-E. Soro con indusio F. Esporangios acrosticoides (cubre completamente la cara abaxial) G-H. Falso indusio. @simpson2019.](/presentaciones/images/polypodiopsida_morfologia_03.jpg){#fig-polypodiopsida-morfologia-03 fig-align="center" width="75%"}
+
+## Polypodiopsida: ciclo de vida
+
+![Ciclo de vida de de un helecho homospórico. @nabors2006.](/presentaciones/images/polypodiopsida_ciclo_01.jpg){#fig-polypodiopsida-ciclo-01 fig-align="center"}
+
+## Polypodiopsida: ciclo de vida
+
+![Ciclo de vida de de un helecho homospórico. @mauseth2016.](/presentaciones/images/polypodiopsida_ciclo_02.jpg){#fig-polypodiopsida-ciclo-02 fig-align="center"}
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-06 fig-align="center"}
+
+## Lignophyta: plantas leñosas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Cámbium vascular
+    -   Xilema y floema secundarios
+-   Cámbium suberoso (felógeno)
+    -   Felodermis y súber o corcho
+-   Crecimiento monopodial
+    -   Un único brote principal desarrolla ramas a partir de yemas laterales (normalmente axilares)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Hipótesis de las relaciones de Lignophyta con las principales apomorfías. @simpson2019.](/presentaciones/images/lignophyta_apomorfias.png){#fig-lignophyta-apomorfias fig-align="center" width="75%"}
+:::
+:::
+
+# Spermatophyta {background-color="black" background-image="/presentaciones/images/spermatophyta_semilla.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:%D0%A0%D0%B0%D0%B7%D0%BD%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%B8%D0%B5_%D1%81%D0%B5%D0%BC%D1%8F%D0%BD.jpg">Alexander Klepnev</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons.
+:::
+
+## Spermatophyta: plantas con semilla
+
+::::: columns
+:::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Heterospóricas
+    -   Megasporas
+    -   Microsporas
+-   Endospóricas
+    -   Desarrollo del gametofito dentro de la pared original de la espora
+-   Semilla
+-   Polen
+-   Eustela
+-   Protoximela endarco
+:::
+::::
+
+:::: {.column .fragment width="50%"}
+![Gymnospermae y Angiospermae los dos grupos de Spermatophyta.](/presentaciones/images/spermatophyta.png){#fig-spermatophyta fig-align="center"}
+
+::: fragment
+![Tipos de xilema primario según su localización. Endarco: se desarrolla desde el centro hacia la periferia del órgano (crecimiento centrífugo). @perez-leal2017.](/presentaciones/images/xilema_tipos.jpg){#fig-xilema-tipos fig-align="center" width="50%"}
+:::
+::::
+:::::
+
+## Semilla
+
+::: columns
+::: {.column .fragment width="40%"}
+> Una semilla se define como un embrión, es decir, un esporofito diploide inmaduro que se desarrolla a partir del cigoto, rodeado por tejido nutritivo y envuelto por una cubierta seminal. Una semilla inmadura, antes de la fecundación, se conoce como óvulo. @simpson2019.
+
+::: fragment
+La evolución de la semilla implicó varios pasos
+:::
+
+::: incremental
+-   Heterosporía
+-   Endosporía
+-   Reducción del número de megasporas a una
+-   Retención de la megaspora
+-   Evolución del tegumento y el micrópilo
+:::
+:::
+
+::: {.column .fragment width="60%"}
+![Evolución hipoética del óvulo y la semilla en Spermatophyta @simpson2019.](/presentaciones/images/spermatophyta_evolucion_semilla.jpg){#fig-spermatophyta-evolucion-semilla fig-align="center" width="65%"}
+:::
+:::
+
+## Polen {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+> Células de forma y dimensión variables, daotadas de una cubierta muy resistente o esporodermis, que se forma dentro de los sacos polínicos del estambre y tiene como misión, una vez formado el microgametófico pluricelular, fecundar el óvulo. @saenz-laín2004.
+
+> En las plantas con semilla, una microspora que contiene un microgametofito (gametofito masculino) maduro o inmaduro. @evert2013.
+
+::: fragment
+![Formación del grano de polen. @megías-pacheco2017.](/presentaciones/images/spermatophyta_polen.png){#fig-spermatophyta-polen fig-align="center"}
+
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Granos de polen de diversas plantas comunes. <a href="https://commons.wikimedia.org/wiki/File:Misc_pollen_colorized.jpg">Dartmouth Electron Microscope Facility, Dartmouth College</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/misc_pollen_colorized.jpg){#fig-spermatophyta-polen_02 fig-align="center"}
+:::
+:::
+
+## Spermatophyta: ciclo de vida
+
+![Alternancia de generaciones haplodiplóntica en Spermatophyta. @simpson2019.](/presentaciones/images/spermatophyta_ciclo.png){#fig-spermatophyta-ciclo-vida fig-align="center"}
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-07 fig-align="center"}
+
+# Gymnospermae {background-color="black" background-image="/presentaciones/images/gymnospermae.jpg"}
+
+::: footer
+<a href="https://commons.wikimedia.org/wiki/File:Pinus_mugo_cone_02.jpg">Agnieszka Kwiecień, Nova</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons.
+:::
+
+## Gymnospermae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Estructuras reproductivas generalmente unisexuales y anemógamas
+-   Óvulos o semillas total o parcialmente expuestas en la superficie de hojas modificadas (esporofilas)
+-   Endospermo desarrollado normalmente a partir de los gametofitos haploides
+-   Xilema con traqueidas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Gimnospermas. <a href="https://commons.wikimedia.org/wiki/File:Gymnospermae.jpg">Unknown, Leipzig; Berlin; Wien: F.A. Brockhaus</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/gymnospermae_ilustracion.jpg){#fig-gymnospermae fig-align="center"}
+:::
+:::
+
+::: footer
+Gymnospermae significa «semilla desnuda»
+:::
+
+## Gymnospermae: relaciones
+
+![Hipótesis sobre las relaciones filogenéticas de Spermatophyta. ANG: angiospermas; CYC: cicadófitas; GIN: ginkgo; GNE: gnetófitas; PIN: pináceas; CUP: cupresófitas.](/presentaciones/images/spermatophyta_relaciones_hipotesis.png){#fig-spermatophyta-relaciones-hipotesis fig-align="center"}
+
+## Gymnospermae: diversidad
+
+::: columns
+::: {.column width="50%"}
+-   Mundial
+    -   Familias: 12-13
+    -   Géneros: 85
+    -   Especies: 1221
+:::
+
+::: {.column width="50%"}
+-   Colombia
+    -   Familias: 7
+    -   Géneros: 15
+    -   Especies: 49
+    -   Endémicas: 11
+:::
+:::
+
+![Relaciones de Gymnospermae. @cole2022.](/presentaciones/images/gymnospermae_cladograma.png){#fig-gymnospermae-cladograma fig-align="center"}
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Cycadophyta (Cycadales)
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Tallo generalmente corto y erecto, rara vez alto y con aspecto de palmera
+-   Hojas en espiral, en su mayoría pinnaticompuestas
+-   Dioicas
+    -   Conos o estróbilos masculinos (polínicos)
+        -   Espermatozoides móviles
+    -   Conos o estróbilos femeninos (ovulíferos) o megasporofilos agrupados en el ápice del tronco en densas masas
+-   Vernación circinada
+:::
+:::
+
+::: {.column .fragment width="50%"}
+### Diversidad
+
+::: incremental
+-   Mundial
+    -   Familias: 2
+    -   Géneros: 10
+    -   Especies: 384
+-   Colombia
+    -   Familias: 2
+    -   Géneros: 2
+    -   Especies: 20
+    -   Endémicas: 11
+:::
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Cycadaceae: cícadas
+
+::: columns
+::: {.column .incremental width="50%"}
+### Características
+
+::: incremental
+-   Plantas dioicas: árboles o hierbas perennes
+-   Troncos aéreos o tallos subterráneos
+-   Hojas grandes, coriáceas, perennes y pinnadas
+-   Conos de masculinos grandes y determinados
+-   Estructuras reproductivas ovuladas no organizadas en conos
+    -   Numerosos megasporófilos dentados o divididos, dispuestos en el ápice del tronco, con uno o más óvulos marginales
+-   Distribución: este de África, este y sudeste de Asia, y norte de Australia
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A–F. *Cycas revoluta*. A. Individuo masculino. B. Hojas con vernación circinada. C. Cono masculino. D. Microsporófilo con microsporangios. E. Individuo femenino, mostrando un agregado de megasporófilos (sin conos verdaderos). F. Megasporófilo con semillas inmaduras en los márgenes. G. *Cycas circinalis*, individuo femenino con megasporófilos maduros portando semillas (sin conos verdaderos). @simpson2019.](/presentaciones/images/cycadophyta_cycadaceae.jpg){#fig-cycadophyta-cycadaceae fig-align="center"}
+:::
+:::
+
+## Cycadaceae: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Géneros: 1
+    -   Especies: 121
+:::
+
+::: {.column .fragment width="50%"}
+-   Colombia
+    -   Géneros: 1
+    -   Especies: 2
+:::
+:::
+
+::: fragment
+![*Cycas revoluta*. A. Habito. B. Cono masculino. C. Megasporófilo.](/presentaciones/images/cycas_revoluta.jpg){#fig-cycas-revoluta fig-align="center"}
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Zamiaceae: zamias
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Plantas dioicas: árboles o hierbas perennes
+-   Troncos aéreos o tallos subterráneos
+-   Hojas pinnadas (raramente bipinnadas)
+-   Conos masculinos y femeninos determinados
+-   Conos femeninos con megasporófilos usualmente peltados
+    -   2 (3) óvulos o semillas en posición adaxial marginal
+-   Distribución: tropical y subtropical, África, Australia y América
+-   Mundial: 9 género, 263 especies
+-   Colombia: 1 género, 20 especies, 11 endémicas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A-B. Conos masculinos. C-D,F,H. Conos femeninos. E-I. Megasporófilo con dos semillas adheridas. G. Cono masculino y femenino. @simpson2019.](/presentaciones/images/cycadophyta_zamiaceae.jpg){#fig-cycadophyta-zamiaceae fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Ginkgophyta: *Ginkgo biloba*
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Árboles dioicos con ramas cortas y robustas
+-   Hojas simples, espiraladas, de forma flabeliforme (en abanico), con venación dicotómica
+-   Estructura reproductiva masculina compuesta por un eje que porta microsporófilos con microsporangios colgantes, dispuestos en pares
+-   Estructura femenina consiste en un eje que usualmente lleva dos óvulos erectos, cada uno con un collar basal
+-   Semilla presenta una capa externa carnosa y una capa interna dura del integumento
+-   Mundial: 1 especie
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![*Ginkgo biloba* (Ginkgoaceae). A–B. Crecimiento vegetativo. C. Venación dicotómica en hoja. D-E. «Conos» masculinos. F–G. Detalle de los microsporangios. H-I. Pedúnculo que lleva un par de óvulos. J. Semillas jóvenes. K. Semilla madura. @simpson2019.](/presentaciones/images/ginkgo_biloba.jpg){#fig-ginkgo-biloba fig-align="center" width="65%"}
+:::
+:::
+
+## Pinopsida
+
+::: columns
+::: {.column .fragment width="50%"}
+| Subclase    | Orden          | Familia         |
+|-------------|----------------|-----------------|
+| Gnetidae    | Ephedrales     | Ephedraceae     |
+|             | Welwitschiales | Welwitschiaceae |
+|             | Gnetales       | Gnetaceae       |
+| Pinidae     | Pinales        | Pinaceae        |
+| Cupressidae | Araucariales   | Araucariaceae   |
+|             |                | Podocarpaceae   |
+|             | Cupressales    | Sciadopityaceae |
+|             |                | Taxaceae        |
+|             |                | Cephalotaxaceae |
+|             |                | Cupressaceae    |
+
+: Clasificación de Pinopsida según @yang2022. {#tbl-pinopsida}
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Gymnospermae. @cole2022.](/presentaciones/images/gymnospermae_cladograma.png){#fig-gymnospermae-cladograma fig-align="center"}
+:::
+:::
+
+
+## Araucariaceae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Árboles dioicos o monoicos
+-   Hojas anchas a aciculares
+-   Conos masculinos grandes, con numerosos (5–20) microsporangios invertidos por microsporófilo
+-   Conos femeninos grandes y se desintegran al madurar
+    -   Cada escama ovulífera lleva un solo óvulo/semilla en posición media
+-   Distribución: sur de sur América, Australasia y sudeste asiático
+-   Mundial: 2 género, 38 especies
+-   Colombia: 1 género, 3 especies
+    -   *Araucaria angustifolia*, *Araucaria araucana* y *Araucaria heterophylla*
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A-D. *Agathis australis*. A. Tane Mahuta (), el tercer árbol de mayor volumén del mundo  @simpson2019. B-C. Copa y hojas. D. Cono masculino y femenino. E–G. *Araucaria bidwillii*. E. Rama. F. Cono femenino. G. Escama ovulífera. H. *Araucaria cunninghamii*. I–L. *Araucaria heterophylla*. @simpson2019.](/presentaciones/images/araucariaceae.jpg){#fig-araucariaceae fig-align="center" width="65%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Podocarpaceae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Árboles dioicos
+-   Hojas lineares, elípticas, subuladas o escuamiformes.
+-   Conos femeninos presentan escamas ovulíferas con un solo óvulo
+    -   Suele estar reducido a una sola semilla, a veces sostenida sobre un receptáculo carnoso. 
+-   La semilla suele estar envuelta por un epimatio y un carpidio carnosos.
+-   Embrión con dos cotiledones
+-   Distribución: Australasia hasta el sudeste asiático, América Central y del Sur y África tropical
+-   Mundial: 20 género, 193 especies
+-   Colombia: 3 género, 7 especies nativas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A–C. Habito y ramas colgantes cubiertas de hojas simples. D,G,I. Conos masculinos. E-F,H,L. Conos femenino con semilla. J-K. Tronco y rama. @simpson2019.](/presentaciones/images/podocarpaceae.jpg){#fig-podocarpaceae fig-align="center" width="65%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Cupressaceae: cupresáceas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Árboles o arbustos monoicos o dioicos
+-   Hojas en espiral, decusadas o verticiladas, de forma deltoide-subulada, lineal o acicular
+-   Conos masculinos suelen tener múltiples microsporangios (2–10) por microesporófilo
+-   Escamas ovulíferas están opuestas o en verticilos de tres
+    -   Varios óvulos por escama en la mayoría de los casos
+    -   Embriones generalmente con dos cotiledones
+-   Mundial: 30 género, 173 especies
+-   Colombia: 7 género, 8 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A. Habito y conos femeninos. B. Ramas con conos femeninos. C. Escama ovulífera separada, mostrando numerosas semillas. D. Ramas vegetativas con hojas decusadas y escuamiformes. E. Conos femeninos con escamas ovulíferas carnosas. F. Ramas deciduas y conos femeninos. G–H. Conos femeninos y ramas deciduas con hojas opuestas y simples. I-K. Ramas perennes, aplanadas, hojas lineares y conos femeninos maduros. L-O. Árbol completo, ramas con hojas, conos femeninos maduros y escama ovulífera con varias semillas aladas. @simpson2019.](/presentaciones/images/cupressaceae.jpg){#fig-cupressaceae fig-align="center" width="55%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Cupressaceae
+
+![*Cupressus lusitanica*. A. Conos femeninos B. Conos femeninos y masculinos. C. Conos masculinos.](/presentaciones/images/cupressus_lusitanica.jpg){#fig-cupressus-lusitanica fig-align="center"}
+
+## Gymnospermae: relaciones
+
+![Relaciones de Gymnospermae. @cole2022.](/presentaciones/images/gymnospermae_cladograma.png){#fig-gymnospermae-cladograma fig-align="center"}
+
+## Pinaceae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Árboles (muy raramente arbustos)
+-   Hojas simples, lineares a aciculares, dispuestas en espiral
+-   Conos masculinos relativamente pequeños
+    -   Dos microsporangios abaxialmente por cada microsporófilo
+-   Conos femeninos con escamas ovulíferas leñosas con dos óvulos/semillas adaxiales e invertidos
+-   Semillas generalmente son aladas
+-   Embriones con múltiples cotiledones
+-   Distribución: Norteamérica, Antillas, Norte de África y Eurasia
+-   Mundial: 11 género, 277 especies
+-   Colombia: 1 género, 3 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Representantes y estructuras de diferentes géneros de Pinaceae. @simpson2019.](/presentaciones/images/pinaceae_01.jpg){#fig-pinaceae_01 fig-align="center" width="75%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Pinaceae: cono, estróbilo o piña
+
+::: columns
+::: {.column .fragment width="50%"}
+![A. Cono femenino en el momento de la polinización. B. Escamas ovulíferas y brácteas. C. Cono femenino de un año de edad. D. Cono femenino maduro. E-F. Conos femeninos. G. Cono femenino con brácteas alargadas y escamas ovulíferas anchas. H. Vista superior de una escama ovulífera. I. Semilla madura. @simpson2019.](/presentaciones/images/pinaceae_02.jpg){#fig-pinaceae_02 fig-align="center" width="70%"}
+:::
+
+::: {.column .fragment width="50%"}
+![A. Brote con fascículos jóvenes. B. Rama que muestra hojas escuamiformes y fascículos. C. Ápice de rama con fascículos y conos masculinos. D. Conos masculinos. E. Microsporófilos de los conos masculinos, cada uno con dos microsporangios. F. Estróbilo masculino. G. Detalle de un microsporangio. @simpson2019.](/presentaciones/images/pinaceae_03.jpg){#fig-pinaceae_03 fig-align="center" width="65%"}
+:::
+:::
+
+## Pinaceae: ciclo de vida
+
+![Ciclo de vida de *Pinus*. @nabors2006.](/presentaciones/images/pinaceae_ciclo.jpg){#fig-pinaceae_ciclo fig-align="center"}
+
+## Gymnospermae: relaciones
+
+![Relaciones de Gymnospermae. @cole2022.](/presentaciones/images/gymnospermae_cladograma.png){#fig-gymnospermae-cladograma fig-align="center"}
+
+## Ephedraceae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Arbustos, lianas o pequeños árboles dioicos
+-   Tallos aéreos fotosintéticos, estriados y estrechos
+-   Hojas escuamiformes, opuestas o verticiladas
+-   Conos masculinos con brácteas decusadas que sustentan microesporangióforos, con sinangios apicales y subtendidos por una bráctea externa y dos bractéolas internas
+-   Conos femeninos con 1 a 3 óvulos subtendidos por una bráctea y encerrado por una -   capa externa formada por bractéolas, y un integumento interno
+-   Demillas aladas o carnosas
+-   Mundial: 1 género, 74 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Ephedraceae. A. Planta completa. B. Planta femenina. C. Planta masculina. D-I. Conos masculinos. J-L. Conos femeninos. M-P. Morfología de la semilla. @simpson2019.](/presentaciones/images/ephedraceae.jpg){#fig-ephedraceae fig-align="center" width="75%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Welwitschiaceae: *Welwitschia mirabilis*
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Dioicas
+-   La mayor parte de la planta está enterrada en suelos arenosos
+-   La parte expuesta consiste en un disco leñoso, macizo y cóncavo
+-   Sólo dos hojas alargadas en forma de cinta, se dividen longitudinalmente con la edad
+-   Ramas con conos surgen del tejido meristemático ubicado en el margen del disco
+-   Endémica del desierto de Namibia
+-   1 especie
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![A. *Gnetum sp*. B-G. *Welwitschia mirabilis*. B. Planta completa. C. Región central. D. Conos masculinos. E–G. Conos femeninos. @simpson2019.](/presentaciones/images/welwitschiaceae.jpg){#fig-welwitschiaceae fig-align="center" width="85%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Gnetaceae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Principalmente enredaderas (rara vez árboles o arbustos)
+-   Hojas simples y opuestas (decusadas)
+-   Monoicas
+-   Embrión con dos cotilédones
+-   Doble fecundación
+-   Distribución: bosques humedos tropicales
+-   Mundial: 1 género, 44 especies
+-   Colombia: 1 género, 6 especies
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![*Gnetum sp.* A-B. Hojas y ramas. C-D. Estróbilos masculinos. E-G. Estróbilos femeninos. H-P. Semillas. @hou2016.](/presentaciones/images/gnetaceae.jpg){#fig-gnetaceae fig-align="center"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo, @yang2024.
+:::
+
+## Embryophyta: relaciones
+
+![Árbol filogenético de Embryophyta. Basado en @gitzendanner2018 y @puttick2018. Espinosa-Correa (2025), CC BY.](/presentaciones/images/embryophyta_cladogram_01.svg){#fig-embryophyta-cladogram-08 fig-align="center"}
+
+# Angiospermae {background-color="white" background-image="/presentaciones/images/angiospermae_cover.jpg" background-size="contain"}
+
+::: footer
+@zuntini2024.
+:::
+
+## Angiospermae: plantas con flor
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Flor (generalmente con perianto)
+-   Estambres con dos sacos polínicos (tecas)
+-   Gametofito masculino trinucleado
+-   Carpelo
+-   Óvulo con dos integumentos
+-   Gametofito femenino reducido
+-   Endospermo y doble fecundación
+-   Elementos del tubo criboso y células acompañantes
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![flores de distintos colores y formas. <a href="https://commons.wikimedia.org/wiki/File:Flower_poster_2.jpg">Alvesgaspar</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.](/presentaciones/images/angiospermae.jpg){#fig-angiospermae fig-align="center" width="70%"}
+:::
+:::
+
+## Angiospermae: diversidad
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mundial
+    -   Ordenes: 64
+    -   Familias: 419
+    -   Géneros: 14177
+    -   Especies: 345299
+-   Colombia
+    -   Familias: 246
+    -   Géneros: 2599
+    -   Especies: 22101
+    -   Endémicas: 6043
+:::
+
+::: {.column .fragment width="50%"}
+![Relaciones de Angiospermae. @apg2016.](/presentaciones/images/angiospermae_cladograma.png){#fig-angiospermae-cladograma fig-align="center" width="60%"}
+:::
+:::
+
+::: footer
+Cifras de @catálogo2016a, @wfo.
+:::
+
+## Angiospermae: diversidad {.smaller}
+
+![Cronología de la historia de la clasificación de Angiospermae en familias. @sotwpf2017.](/presentaciones/images/angiospermae_familias_numeros.png){#fig-angiospermae-numeros fig-align="center"}
+
+::: fragment
+| Grupo            | Familia         | Número de especies |
+|------------------|-----------------|--------------------|
+| Eudicotyledoneae | Asteraceae      | 34503              |
+| Monocotyledoneae | Orchidaceae     | 31480              |
+| Eudicotyledoneae | Fabaceae        | 22875              |
+| Eudicotyledoneae | Rubiaceae       | 14175              |
+| Monocotyledoneae | Poaceae         | 12361              |
+| Eudicotyledoneae | Lamiaceae       | 8091               |
+| Eudicotyledoneae | Euphorbiaceae   | 6630               |
+| Eudicotyledoneae | Myrtaceae       | 6537               |
+| Eudicotyledoneae | Apocynaceae     | 6506               |
+| Eudicotyledoneae | Melastomataceae | 6348               |
+
+: Las 10 familias de Angiospermae con mayor número de especies. Cifras de @wfo.
+
+Veinte familias tienen cada una más de 3000 especies. En conjunto, comprenden aproximadamente el 46 % de todas las plantas vasculares. Existen 33 familias con solo una especie, lo que representa algo menos del 8 % de todas las familias de plantas vasculares, pero menos del 0.01 % de todas las especies.
+:::
+
+## Angiospermae: ciclo de vida
+
+![Ciclo de vida de Angiospermae. <a href="https://commons.wikimedia.org/wiki/File:Angiosperm_life_cycle_diagram-es.svg">LadyofHats</a>, Public domain, via Wikimedia Commons.](/presentaciones/images/angiospermae_ciclo.svg){#fig-angiospermae-ciclo-01 fig-align="center"}
+
+## Angiospermae: ciclo de vida
+
+![Ciclo de vida de Angiospermae. @nabors2006.](/presentaciones/images/angiospermae_ciclo.png){#fig-angiospermae-ciclo-02 fig-align="center"}
+
+## Angiospermae: relaciones
+
+::: columns
+::: {.column width="50%"}
+-   Angiospermae
+    -   Angiospermae basales (ANA)
+    -   Magnoliidae
+    -   Monocotyledoneae
+    -   Eudicotyledoneae
+        -   Eudicotyledoneae temprano divergentes
+        -   Superrosids
+        -   Superasterids
+:::
+
+::: {.column width="50%"}
+![Relaciones de Angiospermae. @apg2016.](/presentaciones/images/angiospermae_cladograma.png){#fig-angiospermae-cladograma fig-align="center" width="60%"}
+:::
+:::
+
+## Nymphaeales
+
+Hierbas acuáticas o subacuáticas, anuales o perennes, con rizomas o tubérculos. Hermafroditas, monoicas o dioicas. Hojas sumergidas, flotantes o emergidas. En Colombia: Cabombaceae y Nymphaeaceae.
+
+![A. *Nymphaea lotus*. B. *Victoria amazonica*.](/presentaciones/images/nymphaeales.jpg){#fig-angiospermae-nymphaeales fig-align="center"}
+
+## Magnoliidae
+
+Plantas leñosas. Hojas opuestas o alternas, coriáceas. Verticilos florales libres o poco fusionados y con muchas partes. Estambres laminares. Filamento poco diferenciado de la antera.
+
+![A. *Annona muricata* (Annonaceae, Magnoliales). B. *Aristolochia ringens* (Aristolochiaceae, Piperales). C. *Cinnamomum verum* (Lauraceae, Laurales). D. *Magnolia grandiflora* (Magnoliaceae, Magnoliales). E. *Persea americana* (Lauraceae, Laurales). F. *Piper nigrum* (Piperaceae, Piperales).](/presentaciones/images/magnoliidae.jpg){#fig-angiospermae-magnoliidae fig-align="center"}
+
+## Monocotyledoneae
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Hierbas o arbustos
+-   Sin cambiúm vascular
+-   Atactostela
+-   Venación paralela
+-   Un sólo cotiledón
+-   Radícula reducida y efímera. Raíces adventicias
+:::
+:::
+
+::: {.column .fragment width="50%"} 
+![Apomorfías de Monocotyledoneae. A. Plastidios de los tubos cribosos con inclusiones proteicas cuneiformes. B. Atactostela. C–E. Nervadura paralela. @simpson2019.](/presentaciones/images/monocotyledoneae_apomorfias.jpg){#fig-monocotyledoneae-apomorfias fig-align="center" width="65%"}
+:::
+:::
+
+## Monocotyledoneae
+![A. Polen. B. *Agave tequilana* (Asparagaceae). C. *Cattleya trianae* (Orchidaceae). D. *Ceroxylon quindiuense* (Arecaceae). E. *Hemerocallis sp.* (Asphodelaceae). F. *Monstera deliciosa*. (Araceae). G. *Musa acuminata* (Musaceae). H. *Tradescantia pallida* (Commelinaceae). I. *Zea mays* (Poaceae).](/presentaciones/images/monocotyledoneae.jpg){#fig-monocotyledoneae fig-align="center"}
+
+## Angiospermae: relaciones
+
+::: columns
+::: {.column width="50%"}
+-   Angiospermae
+    -   Angiospermae basales (ANA)
+    -   Magnoliidae
+    -   Monocotyledoneae
+    -   Eudicotyledoneae
+        -   Eudicotyledoneae temprano divergentes
+        -   Superrosids
+        -   Superasterids
+:::
+
+::: {.column width="50%"}
+![Relaciones de Angiospermae. @apg2016.](/presentaciones/images/angiospermae_cladograma.png){#fig-angiospermae-cladograma fig-align="center" width="60%"}
+:::
+:::
+
+## Eudicotyledoneae
+
+::: columns
+::: {.column .fragment width="50%"}
+-   Eudicotyledoneae temprano divergentes
+    -   No tricolpado
+-   Eudicotyledoneae
+    -   Polen tricolpado o derivado de tricolpado
+    -   Flores tetra o pentameras
+    -   Ácido elágico y ácido gálico
+    -   Duplicación genes florales
+:::
+
+::: {.column .fragment width="50%"}
+
+![Polen tricolpado. @halbritter2018.](/presentaciones/images/polen_tricolpado.jpg){#fig-polen-tricolpado fig-align="center" width="75%"}
+:::
+:::
+
+## Superrosids
+
+::: columns
+::: {.column .fragment width="50%"}
+-   18 ordenes
+-   155 familias
+-   Más de 88000 especies
+-   Apomorfias moléculares, no morfológicas
+:::
+
+::: {.column .fragment width="50%"}
+![Diversidad en Superrosids. <a href="https://commons.wikimedia.org/wiki/File:Rosids-montage.jpg">Caehlla2357</a>, CC0, via Wikimedia Commons.](/presentaciones/images/superrosids.jpg){#fig-superrosids fig-align="center"}
+:::
+:::
+
+## Superasterids
+
+::: columns
+::: {.column .fragment width="50%"}
+-   20 ordenes
+-   146 familias
+-   Más de 122000 especies
+-   Apomorfias moléculares, no morfológicas
+:::
+
+::: {.column .fragment width="50%"}
+
+![Doce especies de Asteraceae. <a href="https://commons.wikimedia.org/wiki/File:Asteracea_poster_3.jpg">Alvesgaspar, Tony Wills (10)</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.](/presentaciones/images/asteraceae.jpg){#fig-asteraceae fig-align="center" width="65%"}
+:::
+:::
+
+## Monocotyledoneae vs Eudicotyledoneae
+
+| Característica                                         | Monocotiledóneas                            | Eudicotiledóneas                                |
+|--------------------------------------------------------|---------------------------------------------|--------------------------------------------------|
+| Partes florales                                        | En grupos de tres (usualmente)              | En grupos de cuatro o cinco (usualmente)         |
+| Polen                                                  | Monoaperturado (con un poro o colpo)        | Triaperturado (con tres poros o colpos)         |
+| Cotiledones                                            | Uno                                         | Dos                                              |
+| Nervadura de la hoja                                   | Usualmente paralela                         | Usualmente reticulada                            |
+| Disposición de haces vasculares primarios en el tallo | Dispersos                                   | En forma de anillo                               |
+| Crecimiento secundario verdadero, con cámbium vascular | Raro                                        | Comúnmente presente                              |
+
+: Principales diferencias entre monocotiledóneas (monocots) y eudicotiledóneas (eudicots) @evert2013. {#tbl-monocotyledoneae-eudicotyledoneae}
+
+## Monocotyledoneae vs Eudicotyledoneae
+
+![Comparación entre Monocotyledoneae y Eudicotyledoneae. <a href="https://commons.wikimedia.org/wiki/File:Comparison_of_Monocotyledons_and_Dicotyledons.png">C. Hulme Taylor</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons.](/presentaciones/images/angiospermae_comparacion.png){#fig-angiospermae-comparacion fig-align="center" width="75%"}
+
+<!-- ## Heading2 -->
+
+<!-- ::: columns -->
+<!-- ::: {.column .fragment width="50%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column .fragment width="50%"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+## Referencías

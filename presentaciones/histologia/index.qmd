@@ -1,0 +1,1379 @@
+---
+title: "Histología"
+# date: 2025-03-04
+format: revealjs
+bibliography: references.bib
+---
+
+# Histología
+
+> Para funcionar correctamente, un tejido debe contener las células adecuadas en la disposición correcta. @mauseth2016
+
+## General Sherman
+
+![El General Sherman es una secuoya (*Sequoiadendron giganteum*) considerada el árbol de un solo tronco más grande del mundo. Su volumen se estima en 1,487 m³, con una altura de 83.8 m. La base tiene una circunferencia de 31.3 m y un diámetro de 11.1 m. <a href="https://commons.wikimedia.org/wiki/File:General_Sherman_Tree_in_Sequoia_National_Park_-_June_2022.jpg">Marty Aligata</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> & <a href="https://commons.wikimedia.org/wiki/File:General_Sherman_with_fire_protection_wrap.jpg">Elizabeth Wu, National Park Service</a>, Public domain, via Wikimedia Commons. ](/presentaciones/images/general_sherman.jpg){#fig-general-sherman fig-align="center"}
+
+## Tejido
+
+::: columns
+::: {.column .fragment width="50%"}
+> Grupo de células organizadas en una unidad estructural y funcional. Las células que lo componen pueden ser iguales (tejido simple) o variadas (tejido complejo). @evert2006.
+
+::: fragment
+### Sistema de tejidos
+> Tejido o tejidos de una planta u órgano vegetal organizados estructural y funcionalmente en una unidad. Comúnmente se reconocen tres sistemas de tejidos, dérmico, vascular y fundamental. @evert2006.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Distribución de los tres sistemas de tejidos a lo largo de una planta vascular. Cada sistema es continuo a lo largo de toda la planta. @nabors2006.](/presentaciones/images/tejidos_sistemas.jpg){#fig-sistemas fig-align="center" width="50%"}
+:::
+:::
+
+## Crecimiento, morfogénesis y diferenciación
+
+::: incremental
+-   **Desarrollo:** suma total de acontecimientos que forman progresivamente el cuerpo de un organismo, implica tres procesos superpuestos: crecimiento, morfogénesis y diferenciación
+-   **Crecimiento:** aumento irreversible de tamaño, se logra mediante una combinación de división celular y agrandamiento celular
+    -   **Primario:** crecimiento originado en los meristemas apicales de tallos y raíces, da lugar a un aumento de la longitud
+    -   **Secundario:** crecimiento derivado de meristemas secundarios o laterales, el cambium vascular y el cambium de corcho, que da lugar a un aumento de la circunferencia
+- **Morfogénesis:** desarrollo de la forma; conjunto de fenómenos relacionados con el desarrollo y la diferenciación de tejidos y órganos
+-   **Diferenciación:** proceso por el que células con idéntica constitución genética se diferencian entre sí y de las células meristemáticas de las que proceden
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column .fragment width="50%"}
+![Clasificación tradicional de los tejidos de las plantas. @megías-pacheco2017.](/presentaciones/images/tejidos_tradicional.png){#fig-sistemas fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Clasificación de los tejidos de las plantas según su permanencia, capacidad de división y tipos celulares que los componen. @megías-pacheco2017.](/presentaciones/images/tejidos_permanencia.png){#fig-sistemas fig-align="center"}
+:::
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column width="50%"}
+### Tejidos indiferenciados
+
+-   Meristemas
+    -   Primarios o apicales
+        -   Protodermis
+        -   Procambium 
+        -   Meristema fundamental
+    -   Secundarios o laterales
+        -   Cambium vascular
+        -   Cambium suberoso
+:::
+
+::: {.column width="50%"}
+### Tejidos diferenciados
+
+-   Fundamental
+    -   Parénquima
+-   Protección
+    -   Epidermis
+    -   Peridermis
+-   Sostén
+    -   Colénquima
+    -   Esclerénquima
+-   Conducción
+    - Xilema
+    - Floema
+-   Secreción
+:::
+:::
+
+# Tejidos indiferenciados > Meristemas
+
+## Meristemas
+
+::: columns
+::: {.column .fragment width="50%"}
+> Regiones de tejido embrionario capaces de añadir células indefinidamente al cuerpo de la planta. @evert2013.
+
+### Carácteristicas
+
+::: incremental
+-   Células vivas y totipotentes
+-   Pared celular primaria delgada
+-   Indiferenciadas
+-   Poliédricas
+-   Sin espacioes intercelulares
+-   Núcleos grandes
+-   Abundantes ribosomas y AG
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Secciones longitudinales de medianas de *Ternstroemia gymnanthera* (A) y *Aucuba japonica* (B). @atlasof2014.](/presentaciones/images/meristemas_angiosperma.jpg){#fig-meristemas fig-align="center" width="60%"}
+:::
+:::
+
+::: footer
+*Meristemo* del alemán *Meristem*, y este del griego meristós «divisible»
+:::
+
+## Meristemas: división y diferenciación {.smaller}
+
+::: fragment
+![A. Células lista para dividirse. B. División del núcelo. C. División del citoplasma. D. Crecimiento célular. E. Una puede dividirse, otra diferenciarse. F. Un par de células crecen, una sigue diferenciandose. G. Corte transversal mostrando lo representado. @mauseth2016.](/presentaciones/images/meristemas_division.png){#fig-meristemas-division fig-align="center" width="50%"}
+:::
+
+::: columns
+::: {.column .fragment width="50%"}
+![Planos de división célular. @megías-pacheco2017.](/presentaciones/images/celulas_division.png){#fig-celulas-division fig-align="center" width="45%"}
+:::
+
+::: {.column .fragment width="50%"}
+![Varios tipos de células pueden originarse a partir de una célula meristemática del procambium o del cambium vascular. @evert2013.](/presentaciones/images/meristemas_diferenciacion.png){#fig-meristemas-diferenciacion fig-align="center" width="65%"}
+:::
+:::
+
+## Meristemas: clasificación {.smaller}
+
+::::: columns
+:::: {.column .fragment width="50%"}
+
+### Por posición en la planta
+::: incremental
+-   Apicales
+-   Laterales
+-   Intercalares
+:::
+
+::: fragment
+### Por naturaleza de las células
+:::
+
+::: incremental
+-   Primarios
+-   Secundarios
+:::
+
+::: fragment
+![Clasificación de los meristemas. @megías-pacheco2017.](/presentaciones/images/meristemos_clasificacion.png){#fig-meristemas-clasificacion fig-align="center"}
+:::
+::::
+
+:::: {.column .fragment width="50%"}
+![Las células de un meristemo apical dan lugar a tres tipos de células subapicales, que a su vez dan lugar a tipos particulares de tejidos primarios maduros. @mauseth2016.](/presentaciones/images/meristemas_lineas.png){#fig-meristemas-lineas fig-align="center"}
+::::
+:::::
+
+## Meristemas apicales o primarios
+
+::: columns
+::: {.column .fragment width="50%"}
+> La protodermis, el procambium y el meristemo fundamental
+son los meristemas primarios @evert2013.
+
+::: incremental
+-   Se originan en el embrión
+-   Se encuentran en los ápices de raíces y tallos, principales y laterales
+-   Responsables del crecimiento primario de la planta
+:::
+
+::: fragment
+![Del meristemo apical a los tejidos primarios El meristemo apical da lugar a los meristemos primarios, que originan los tejidos y sistemas de tejidos del cuerpo primario de la planta. @nabors2006.](/presentaciones/images/meristemas_tejidos.jpg){#fig-meristemas-tejidos fig-align="center"}
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Localización de los meristemas apicales en una planta vascular. @simpson2019.](/presentaciones/images/meristemas_apicales.jpg){#fig-meristemas-apicales fig-align="center" width="75%"}
+:::
+:::
+
+## Meristema apicales: caulinar y radical
+
+![Meristemo apical caulinar y radical. @evert2013.](/presentaciones/images/meristemos_apical.png){#fig-meristemas-apicales-02 fig-align="center"}
+
+## Meristemas laterales o secundarios {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+> Meristemas que dan lugar a tejido secundario; el cambium vascular y el cambium de corcho (felogéno). @evert2013.
+
+::: incremental
+-   Responsable del crecimiento secundario
+    -   Formación de la madera y de la corteza de los troncos
+    -   Aumento de diámetro de tallos y raíces
+-   Se disponen paralelamente a los lados del tallo y la raíz
+-   Hay dos tipos de meristemas secundarios 
+    -   Cámbium vascular
+    -   Cámbium suberoso o felógeno
+:::
+
+::: fragment
+![Resumen del desarrollo del tallo en una angiosperma leñosa durante el primer año de crecimiento. *Colectivamente constituyen la peridermis. @evert2013](/presentaciones/images/meristemas_tejidos.png){#fig-crecimiento-secundario fig-align="center"}
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Representación esquemática de crecimiento secundario en tallos de eudicotiledóneas de dos años. @scert2024.](/presentaciones/images/crecimiento_secundario.jpg){#fig-crecimiento-secundario fig-align="center" width="60%"}
+:::
+:::
+
+## Cámbium vascular
+
+::: columns
+::: {.column .fragment width="50%"}
+> Meristemo lateral que forma los tejidos vasculares secundarios, floema secundario y xilema secundario, en el tallo y la raíz. @evert2006.
+
+::: incremental
+-   Se origina a partir de células del córtex y del procámbium
+    -   En la raíz, las células del periciclo también participan en este proceso
+-   El cámbium vascular añade xilema secundario hacia la parte interna y floema secundario hacia la parte externa del cámbium vascular
+-   Siempre se produce más xilema que floema a partir del cámbium vascular
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Tallo de girasol donde se aprecia un estadio previo a la conversión de cámbium fascicular e interfascicular en cámbium vascular. @megías-pacheco2017.](/presentaciones/images/cambium-fascicular.jpg){#fig-cambium-vascular fig-align="center"}
+:::
+:::
+
+::: footer
+*Cámbium* del leatín *cambire* «intercambiar»
+:::
+
+## Cámbium suberoso o felógeno
+
+::: columns
+::: {.column .fragment width="50%"}
+> Meristema lateral que forma la peridermis, un tejido protector secundario común en tallos y raíces de plantas con semilla. Produce súber o corcho hacia el exterior y felodermis hacia el interior. @evert2006.
+
+::: incremental
+-   Se origina inicialmente a partir de células parenquimáticas del córtex y, ocasionalmente, del floema primario
+-   La peridermis la produce el cámbium suberoso y está formada por el súber o corcho, la felodermis y las células del propio cámbium suberoso
+-   Puede ser persistente o no persistente
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Tallo de saúco donde se aprecia el cámbium suberoso. @megías-pacheco2017.](/presentaciones/images/cambium-suberoso.jpg){#fig-cambium-suberoso fig-align="center"}
+:::
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column width="50%"}
+### Tejidos indiferenciados
+
+-   Meristemas
+    -   Primarios o apicales
+        -   Protodermis
+        -   Procambium 
+        -   Meristema fundamental
+    -   Secundarios o laterales
+        -   Cambium vascular
+        -   Cambium suberoso
+:::
+
+::: {.column width="50%"}
+### Tejidos diferenciados
+
+-   Fundamental
+    -   Parénquima
+-   Protección
+    -   Epidermis
+    -   Peridermis
+-   Sostén
+    -   Colénquima
+    -   Esclerénquima
+-   Conducción
+    - Xilema
+    - Floema
+-   Secreción
+:::
+:::
+
+# Tejidos diferenciados > Fundamental
+
+## Tejido fundamental
+
+::: columns
+::: {.column .fragment width="50%"}
+> La mayoría de las frutas, verduras y otras partes de las plantas que consumimos están compuestas casi en su totalidad por parénquima. @mauseth2016
+
+::: fragment
+El parénquima constituye el tejido fundamental en varios aspectos:
+:::
+
+::: incremental
+-   Filogenéticamente
+    -   las primeras plantas estaban compuestas sólo de parénquima.
+-   Ontogenéticamente
+    -   Células más parecidas a las células embrionarias. 
+-   Fisiológicamente
+    -   Interviene en la fotosíntesis, la respiración y el almacenamiento.
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Las células del parénquima son el tipo más común de célula vegetal. nabors2006.](/presentaciones/images/parenquima.jpg){#fig-parenquima fig-align="center" width="70%"}
+:::
+:::
+
+## Parénquima {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Tejido simple
+-   Constituido por células vivas
+    -   Poco diferenciadas
+    -   Pared primaria
+    -   Hay espacios intercelulares entre las células
+    -   Vacuola grande
+    -   Morfológicamente muy diversas
+    -   Totipotentes
+-   Fisiológicamente complejo
+-   Gran variedad de funciones
+    -   Fotosíntesis
+    -   Almacenamiento
+    -   Elaboración de sustancias orgánicas 
+    -   Regeneración de tejidos
+    -   Transporte
+:::
+:::
+
+::: {.column .fragment width="50%"}
+### Clasificación
+
+Según su actividad y función se pueden clasificar en:
+
+::: incremental
+-   Fundamental
+-   Clorofílico
+-   Reserva
+-   Acuífero
+-   Aerífero
+-   Asociado a los tejidos de conducción
+:::
+
+::: fragment
+![¿Como no amarlo?](/presentaciones/images/iparenchyma.png){#fig-iparenchyma fig-align="center"}
+:::
+:::
+:::
+
+::: footer
+*Parénquima* del latín científico *parenchyma*, y este del griego *parénchyma* «sustancia de los órganos»
+:::
+
+## Parénquima fundamental
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células poliédrica e isodiamétricas
+    -   Pared primaria muy delgada
+    -   Vacuola muy desarrollada
+    -   No presentan cloroplastos sino leucoplastos
+-   Funciona como tejido de relleno
+-   Localizado en la médula y el córtex de tallos y raíces, la pulpa de los frutos y es en general cualquier órgano
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![a. Parénquima de la médula en un tallo de *Artemisia sp.* b. El tejido de la médula se compone de células de parénquima. Barras de escala = 500 μm en a, y 50 μm en b. @crang2018.](/presentaciones/images/parenquima_fundamental.jpg){#fig-parenquima-fundamental fig-align="center" width="50%"}
+:::
+:::
+
+## Parénquima clorofílico o Clorénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células con pared primaria delgada
+    -   Abundantes espacios intercelulares
+    -   Número variable de cloroplastos
+    -   Presentan numerosas vacuolas o una sola
+-   Tejido fotosintético por excelencia
+-   Localizado por lo general debajo de la epidermis
+-   El clorénquima de la hoja se denomina mesófilo y se divide en dos tipos
+    -   Empalizada (fotosíntesis)
+    -   Lagunar o esponjoso (intercambio gaseoso)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Tejidos y organización típicos de una hoja. @megías-pacheco2017.](/presentaciones/images/parenquima_clorofilico.jpg){#fig-parenquima-clorofilico fig-align="center"}
+:::
+:::
+
+## Parénquima de reserva
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Su estructura depende de la naturaleza de la sustancia acumulada
+-   Sintetiza y almacena (en solución o sólidos) diversas sustancias (azúcares, cristales proteicos, proteínas, lípidos, pigmentos, etc.) 
+-   Localizado en raíz, tallo, hojas, semillas y frutas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Parénquima de reserva en la corteza radicular de *Rannunculus repens*. @megías-pacheco2017.](/presentaciones/images/parenquima_reserva.jpg){#fig-parenquima-reserva fig-align="center"}
+:::
+:::
+
+## Parénquima acuífero o Hidrénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células de grandes dimensiones
+    -   Alargadas
+    -   Pared primaria delgada
+    -   Vacuola muy desarrollada, rica en agua o mucílagos
+-   Especializado en almacenar agua
+-   Localizado en los tallos y hojas de plantas suculentas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Parénquima de acuífero en tallo de un cactus. @megías-pacheco2017.](/presentaciones/images/parenquima_acuifero.jpg){#fig-parenquima-acuifero fig-align="center"}
+:::
+:::
+
+## Parénquima aerífero o Aerénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células de forma variada, frecuentemente estrelladas o lobuladas
+    -   Espacios intercelulares muy grandes, llamados lagunas o cámaras
+-   Continuo desde los tallos hasta las raíces
+-   Permiten la conducción de gases
+-   Permite la flotación
+-   Localizado típicamente en angiospermas acuáticas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Parénquima aerífero en la médula de *Juncus spp*. @megías-pacheco2017.](/presentaciones/images/parenquima_aerifero.jpg){#fig-parenquima-aerifero fig-align="center"}
+:::
+:::
+
+## Parénquima asociado a los tejidos de conducción
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Generalmente de paredes primarias engrosadas o secundarias
+-   Sirve para el almacenamiento de sustancias de reserva como para el transporte
+-   Localizado formando los radios medulares y también filas verticales entre floema y xilema
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Parénquima radial situado entre las tráqueas del xilema. @megías-pacheco2017.](/presentaciones/images/parenquima_vascular.jpg){#fig-parenquima-vascular fig-align="center"}
+:::
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column width="50%"}
+### Tejidos indiferenciados
+
+-   Meristemas
+    -   Primarios o apicales
+        -   Protodermis
+        -   Procambium 
+        -   Meristema fundamental
+    -   Secundarios o laterales
+        -   Cambium vascular
+        -   Cambium suberoso
+:::
+
+::: {.column width="50%"}
+### Tejidos diferenciados
+
+-   Fundamental
+    -   Parénquima
+-   Protección
+    -   Epidermis
+    -   Peridermis
+-   Sostén
+    -   Colénquima
+    -   Esclerénquima
+-   Conducción
+    - Xilema
+    - Floema
+-   Secreción
+:::
+:::
+
+# Tejidos diferenciados > Protección
+
+## Tejidos de protección {background-color="black" background-image="/presentaciones/images/epidermis_arabidopsis.jpg"}
+
+> Todo el intercambio de material entre una planta y su entorno ocurre a través de su epidermis. @mauseth2016
+
+::: incremental
+-   Parte más externa las plantas
+    -   Se encuentran en contacto con el medio ambiente
+    -   Protegen de la desecación, del daño mecánico y patógenos
+    -   Funcionan como aislantes térmicos
+-   Los tejidos de protección típicos son la epidermis y peridermis
+    -   También se incluyen a la hipodermis y a la endodermis
+:::
+
+::: footer
+Epidermis de una hoja de *Arabidopsis thaliana* (cryo-SEM). <a href="https://commons.wikimedia.org/wiki/File:Arabidopsis-epiderm-stomata.jpg">Emmanuel Boutet</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons.
+:::
+
+## Epidermis
+
+::: columns
+::: {.column .fragment width="50%"}
+> Capa de células que separa el medio interno de las plantas del externo en aquellos órganos que no presentan crecimiento secundario. @megías-pacheco2017.
+
+::: incremental
+-   Tejido complejo
+-   Formado por varios tipos de células
+    -   Epidérmicas
+    -   Estomáticas
+    -   Idioblastos
+    -   Tricomas
+-   Las principales funciones son: 
+    -   Protección mecánica de tejidos subyacentes
+    -   Restricción de la transpiración
+    -   Regulación del intercambio gaseoso
+    -   Contribuye a dar sostén a la planta
+:::
+:::
+
+::: {.column .fragment width="50%"} 
+![Hoja de *Ficus elástica*. cis: cistolito, cu: cuticula, ep: epidermis pluriestratificada, hv: haz vascular, id: idioblasto, pe: parénquima en empalizada, pl: parénquima lagunar, st: estoma.](/presentaciones/images/hoja_ficus.png){#fig-hoja-ficus fig-align="center" width="75%"}
+:::
+:::
+
+::: footer
+*Epidermis* del griego *epidermís*, de epi- «sobre» y dérma «piel»
+:::
+
+## Células epidérmicas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células vivas
+    -   Más abundantes y menos especializadas
+    -   Unidas muy estrechamente, sin espacios intercelulares
+    -   Pared celular primaria
+    -   Forma y tamaño muy variados, adaptándose a la estructura que recubren
+    -   Normalmente no tienen cloroplastos, sino proplastos o leucoplastos
+    -   Una gran vacuola
+    -   tienen desarrollado el RE y AG
+-   Generalmente es una sola fila de células
+-   En las partes áreas de la planta forman la cutícula (cutina)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+
+![Epidermis de la hoja de una crasulacea. @megías-pacheco2017.](/presentaciones/images/epidermis_sedum.jpg){#fig-epidermis_sedum fig-align="center"}
+
+![Epidermis pluriestratificada, velamen, de la raíz aérea de una orquídea. @megías-pacheco2017.](/presentaciones/images/epidermis_velamen.png){#fig-velamen fig-align="center"}
+
+:::
+:::
+
+## Cuticula
+
+::: columns
+::: {.column .fragment width="50%"}
+> Capa cerosa o grasaso en la pared externa de las células epidérmicas, compuesta por cutina y ceras. evert2006.
+
+::: incremental
+-   Impide la pérdida de agua y la entrada de patógenos
+-   Grosos variable
+-   Sobre la cutícula se depositan otras sustancias lipídicas
+-   Formada por capa cuticular (más interna) y capa lamelar (más externa)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Epidermis con diferentes tipos de cutícula. @megías-pacheco2017.](/presentaciones/images/epidermis_cuticula.jpg){#fig-cuticula fig-align="center"}
+:::
+:::
+
+## Estomas
+
+::: columns
+::: {.column .fragment width="50%"}
+> Abertura en la epidermis de hojas y tallos, bordeada por dos células oclusivas, que facilita el intercambio de gases. También se utiliza para referirse al aparato estomático completo, que incluye las células oclusivas y el poro que forman. @evert2006.
+
+### Características {.fragment}
+
+::: incremental
+-   Formados por dos células oclusivas o de guarda y un orificio denominado (ostiolo)
+-   Bajo las células oclusivas se encuentra la cámara subestomática
+-   Generalmente rodeados por células acompañantes, subsidiarias, o anexas
+-   El número de estomas es variable
+-   En hojas normalmente están en el envés
+-   Controlan el intercambio de gases
+:::
+:::
+
+::: {.column .fragment width="50%"}
+
+![Estomas de diferentes plantas. @megías-pacheco2017.](/presentaciones/images/estomas.png){#fig-estomas fig-align="center"}
+
+![Estomas de diferentes plantas. @megías-pacheco2017.](/presentaciones/images/estoma_lateral.jpg){#fig-estomas-lateral fig-align="center"}
+:::
+:::
+
+::: footer
+*Estoma* del griego *stóma* «boca»
+:::
+
+## Estomas: clasificación
+
+::: columns
+::: {.column .fragment width="50%"}
+Clasificados en función de la organización de las células oclusivas y las células acompañantes
+
+::: incremental
+-   **Actinocítico:** células anexas de manera radial
+-   **Anomocítico:** sin células anexas
+-   **Anisocítico:** tres células anexas de tamaño desigual
+-   **Ciclocítico:** anillos concéntricos de células anexas
+-   **Diacítico:** dos células anexas perpendiculares a las oclusivas
+-   **Paracítico:** dos células anexas paralelamente a las oclusivas
+-   **Tetracítico:** cuatro células anexas
+-   **Poaceae:** células oclusivas en forma de mancuerna, dos células anexas pequeñas paralelamente a las oclusivas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Clasificación de estomas. @singh2019.](/presentaciones/images/estomas_tipos.png){#fig-estomas-tipos fig-align="center"}
+:::
+:::
+
+
+## Tricomas
+
+::: columns
+::: {.column .fragment width="50%"}
+> Excrecencia epidérmica de diversa forma, estructura y función, pero sin tejido vascular. @beentje2016.
+
+### Características
+
+::: incremental
+-   Pared primarias o secundaria
+-   Pueden estar en cualquier órgano de la planta
+-   Desde micrómetros hasta centímetros de longitud
+-   Morfología variable
+-   Unicelulares o pluricelulares
+-   Glandulares y no glandulares
+-   Ramificados y no ramificados
+-   Constituyen el indumento
+-   Utilizados en sistemática
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![(A) Tricoma en forma de escama. (B y C) Tricomas ramificados. (D, E y F) Tricomas glandulares. (G y H) Tricomas simples, no ramificados, no glandulares. @mauseth2016.](/presentaciones/images/tricomas_esquema.png){#fig-tricomas fig-align="center" width="60%"}
+:::
+:::
+
+## Tricomas: clasificación
+
+::: columns
+::: {.column .fragment width="50%"}
+![Distintos tipos de tricomas. @megías-pacheco2017.](/presentaciones/images/tricomas-tipos.png){#fig-tricomas-tipos fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![Tricomas de diferentes plantas. @megías-pacheco2017.](/presentaciones/images/tricomas.jpg){#fig-tricomas-tipos-2 fig-align="center"}
+:::
+:::
+
+## Tricomas: ejemplos
+
+![Variedad de tricomas en la familia Asteraceae. @khaleel2022.](/presentaciones/images/tricoma_ejemplos.jpg){#fig-tricomas-ejemplos fig-align="center"}
+
+## Idioblastos {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+> Célula de un tejido que difiere notablemente en forma, tamaño o contenido de otras células del mismo tejido. @evert2006.
+
+::: incremental
+-   Técnicamente las células oclusivas y los tricomas son idioblastos, sin embargo se suelen tratar como células separadas y distintas
+-   Células buliformes
+    -   Especializada en almacenar agua en Poaceae
+-   Células silícicas y suberosas
+    -   Típicas de la epidermis de Poaceae
+-   Litocitos
+    -   Contienen cistolitos de carbonato de calcio
+:::
+
+::: fragment
+![Litocitos y cistolitos. @chulalongkorn2015.](/presentaciones/images/celulas_litocitos.jpg){#fig-litocitos fig-align="center" width="50%"}
+:::
+:::
+
+::: {.column .fragment width="50%"}
+
+![Células buliformes. @avci2023.](/presentaciones/images/celulas_buliformes.jpg){#fig-buliformes fig-align="center" width="50%"}
+
+![Células silícicas. @prychid2003.](/presentaciones/images/celulas_silicicas.jpg){#fig-silicicas. fig-align="center" width="50%"}
+
+:::
+:::
+
+## Peridermis
+
+::: columns
+::: {.column .fragment width="50%"}
+> Tejido protector secundario que sustituye a la epidermis en tallos y raíces, raramente en otros órganos.
+
+::: incremental
+-   Formado por el corcho, súber, felema, el felógeno (cambium suberoso) y la felodermis
+-   Acumulación de terpenos, alcaloides, fenoles y otros componentes bioactivos
+-   Producida por el felógeno
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Tallo de *Sambucus nigra* con peridermis. @megías-pacheco2017.](/presentaciones/images/peridermis.jpg){#fig-peridermis fig-align="center"}
+:::
+:::
+
+## Súber, corcho o felema
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Compuesto por células muertas con paredes suberizadas
+-   Formado hacia el exterior por el felógeno (cámbium suberoso)
+-   Reemplaza la epidermis en tallos y raíces envejecidos de muchas plantas con semilla
+-   Tejido elástico, compresible, impermeable al agua, resistente a la acción de enzimas, liviano y buen aislante térmico
+-   Pueden tener contenidos fluidos o sólidos
+-   Formado por células células suberizadas y células feloides
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Súber en tallo de *Aristolochia*. Las lenticelas son estructuras que permiten el intercambio gaseoso. @evert2013.](/presentaciones/images/suber.jpg){#fig-suber fig-align="center" width="75%"}
+
+![Corteza de *Quercus suber*. <a href="https://commons.wikimedia.org/wiki/File:1-Arraiolos-0050.jpg">User:Sallyofmayflower</a>, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>, via Wikimedia Commons.](/presentaciones/images/corcho.jpg){#fig-corcho fig-align="center" width="50%"}
+
+:::
+:::
+
+## Felodermis
+
+### Características
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Formada por células vivas
+    -   Similar al parénquima, diferente por su forma de hileras radiales
+    -   Presentan numerosos espacios intercelulares
+    -   Inicialmente pueden ser fotosintéticas
+:::
+
+::: {.column .incremental width="50%"}
+-   En general es una capa de células o unas pocas
+-   La esclerificación de todo o parte del filodermo es común
+-   Puede desempeñar una función de almacenamiento
+:::
+:::
+
+::: fragment
+![Algunas fases del desarrollo de la peridermis. a. Peridermis reciente formada. b. Peridermis en una fase más avanzada de desarrollo. @evert2013.](/presentaciones/images/felodermis.jpg){#fig-peridermis fig-align="center" width="60%"}
+:::
+
+::: footer
+*Felodermis* como *epidermis* pero con el prefijo *felo* «corcho»
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column width="50%"}
+### Tejidos indiferenciados
+
+-   Meristemas
+    -   Primarios o apicales
+        -   Protodermis
+        -   Procambium 
+        -   Meristema fundamental
+    -   Secundarios o laterales
+        -   Cambium vascular
+        -   Cambium suberoso
+:::
+
+::: {.column width="50%"}
+### Tejidos diferenciados
+
+-   Fundamental
+    -   Parénquima
+-   Protección
+    -   Epidermis
+    -   Peridermis
+-   Sostén
+    -   Colénquima
+    -   Esclerénquima
+-   Conducción
+    - Xilema
+    - Floema
+-   Secreción
+:::
+:::
+
+# Tejidos diferenciados > Sostén
+
+## Tejidos de sostén
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Mantienen erguida a la planta
+-   El colénquima y el esclerénquima son los tejidos de sostén
+-   Constituidos por células con paredes celulares gruesas
+-   Diferentes en sus paredes celulares y localización
+-   En plantas de cierto porte, la función de soporte la realiza los tejidos vasculares
+:::
+
+::: {.column .fragment width="50%"}
+![Tejidos de sosten en plantas: colénquima y esclerénquima. Snowman frosty, Public domain, via Wikimedia Commons.](/presentaciones/images/tejidos_sosten.jpg){#fig-sosten fig-align="center"}
+:::
+:::
+
+## Colénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Tejido simple
+-   Compuesto de células vivas más o menos alargadas
+    -   Pared primaria, no lignificadas y desigualmente engrosadas
+    -   Protoplasto  vacuolado
+    -   Capaces de reanudar una actividad meristemática
+-   Tejido resistente y flexible
+-   Común en regiones de crecimiento primario en tallos y hojas
+-   Ausente en la mayoría de las monocotiledóneas
+:::
+
+:::
+
+::: {.column .fragment width="50%"}
+![Distribución del colénquima (entrecruzado) en diversas partes de la planta. @evert2006.](/presentaciones/images/colenquima_ubicacion.png){#fig-colenquima fig-align="center" width="75%"}
+:::
+:::
+
+::: footer
+*Colénquima* del griego *colla* «goma»
+:::
+
+## Colénquima: clasificación
+
+::: columns
+::: {.column .fragment width="50%"}
+El colénquima se clasifica en base a la distribución del engrosamiento de la pared
+
+::: incremental
+-   **Angular:** engrosamientos en los vértices de las células
+-   **Anular:** engrosamiento uniforme alrededor de la células
+-   **Lagunar:** engrosamientos próximos a espacios intercelulares
+-   **Laminar:** engrosamientos en las paredes tangenciales externas e internas
+:::
+
+::: fragment
+Existen formas intermedias de difícil clasificación.
+:::
+:::
+
+::: {.column .fragment width="50%"} 
+![Tipos de colénquima. A. Colénquima angular. B. Colénquima laminar. C. Colénquima anular. D. Colénquima lagunar. @megías-pacheco2017.](/presentaciones/images/colenquima_tipos.png){#fig-colenquima-tipos fig-align="center"}
+:::
+:::
+
+## Colénquima: ejemplos
+
+![Colénquima de diferentes plantas. @megías-pacheco2017.](/presentaciones/images/colenquima_tipos.jpg){#fig-colenquima-ejemplos fig-align="center"}
+
+## Esclerénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Tejido compuesto
+-   Formado por células muertas al madurar
+    -   Pared celular secundaria, engrosada y lignificada
+    -   Variebles en forma, estructura, origen y desarrollo
+-   Soporte de las estructuras que han dejado de alargarse
+-   Más abundante en tallos y hojas que en raíces
+-   Conformado por fibras y esclereidas
+    -   fibroesclereida cuando es difícil de clasificar
+:::
+:::
+
+::: {.column .fragment width="50%"} 
+![Distribución del esclerénquima (punteado), principalmente fibras, y de los tejidos vasculares, en diversas partes de la planta. @evert2006.](/presentaciones/images/esclerenquima_ubicacion.png){#fig-esclerenquima fig-align="center" width="60%"}
+:::
+:::
+
+::: footer
+*Esclerénquima* del griego *scleros* «duro» y *enchyma* «sustancia o infusión»
+:::
+
+## Esclereidas
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células pequeñas
+    -   Pared secundaria muy gruesa y lignificada
+    -   Forma variable (isodiamétricas, estrelladas, ramificadas, etc.)
+-   Función mecánica o protectora
+-   Se encuentran en los tallos, hojas, frutos y semillas, aisladas o formando capas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Esclereidas de un tallo de *Ulex*. @megías-pacheco2017.](/presentaciones/images/esclereida_braquiesclereidas.png){#fig-braquiesclereidas fig-align="center"}
+:::
+:::
+
+## Esclereidas: clasificación
+
+::: columns
+::: {.column .fragment width="50%"}
+Las esclereidas se clasifican según su forma.
+
+::: incremental
+-   **Astroesclereidas:** células ramificadas en grado variable
+-   **Braquiesclereidas:** células cortas, isodiamétricas, célula pétrea
+-   **Filiformes:** células largas y delgadas semejantes a fibras
+-   **Macroesclereidas:** células alargadas en forma de barril
+-   **Osteoesclereidas:** células columnares con sus extremos agrandados
+-   **Tricoesclereidas:** células con paredes delgadas, semejantes a pelos
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Tipos de esclereidas. a. Braquiesclereidas. b. Macrosclereidas. c. Osteosclereidas d. Astrosclereidas. e. Tricosclereidas. @scert2024.](/presentaciones/images/esclereidas_clasificacion.png){#fig-esclereidas-clasificacion fig-align="center" width="75%"}
+:::
+:::
+
+## Esclereidas: ejemplos
+
+![A. Braquiesclereidas en *Pyrus communis*. B. Astroesclereidas en *Nymphaea odorata*. C. Macroesclereidas en *Phaseolus vulgaris*, recuadro: macroesclereidas (M) y osteoesclereidas (O) aisladas de una *Vicia faba*. @crang2018.](/presentaciones/images/esclereidas_tipos.jpg){#fig-esclereidas-ejemplo fig-align="center"}
+
+
+## Fibras
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Células largas y estrechas, con extremos aguzados (fusiformes)
+    -   Pared secundaria lignificada, de grosor variable
+-   Varían en tamaño, forma,estructura, y cantidad y tipo de puntuaciones
+-   Pueden encontrarse en diversas partes de la planta
+-   Gran importancia económica
+-   Se clasifican según posición
+    -   Xilares, se encuentran en el xilema
+    -   Extraxilares, se encuentran en el floema (fibras floemáticas), en la corteza (fibras corticales), o rodeando haces vasculares (fibras perivasculares)
+:::
+:::
+
+::: {.column .fragment width="50%"}
+
+![Fibras de esclerénquima en tallo de *Zea mays*. @megías-pacheco2017.](/presentaciones/images/esclerenquima_fibras.jpg){#fig-fibras fig-align="center"}
+:::
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column width="50%"}
+### Tejidos indiferenciados
+
+-   Meristemas
+    -   Primarios o apicales
+        -   Protodermis
+        -   Procambium 
+        -   Meristema fundamental
+    -   Secundarios o laterales
+        -   Cambium vascular
+        -   Cambium suberoso
+:::
+
+::: {.column width="50%"}
+### Tejidos diferenciados
+
+-   Fundamental
+    -   Parénquima
+-   Protección
+    -   Epidermis
+    -   Peridermis
+-   Sostén
+    -   Colénquima
+    -   Esclerénquima
+-   Conducción
+    - Xilema
+    - Floema
+-   Secreción
+:::
+:::
+
+# Tejidos diferenciados > Conducción
+
+## Tejidos de conducción o vasculares
+
+::: columns
+::: {.column .incremental width="50%"}
+-   Tejidos compuestos
+-   Células muy especializadas
+    -   Generalmente alargada
+    -   paredes terminales generalmente oblicuas
+    -   A menudo están fusionadas entre sí
+
+:::
+
+::: {.column .incremental width="50%"}
+-   Constituido por el xilema y el floema (haces vasculares)
+-   Especializados en la conducción de agua, sustancias inorgánicas y orgánicas
+-   Organización de los tejidos conductores es diferente en tallo y raíz
+:::
+:::
+
+::: fragment
+![Tallo de *Helianthus*. <a href="https://commons.wikimedia.org/wiki/File:Herbaceous_Dicot_Stem_Vascular_Bundles_in_Older_Helianthus_(23669988488).jpg">Berkshire Community College  Bioscience Image Library</a>, CC0, via Wikimedia Commons.](/presentaciones/images/tejidos_vasculares.jpg){#fig-tejidos-vasculares fig-align="center" width="50%"}
+:::
+
+## Xilema
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Tejido complejo
+-   Transporta la savia bruta (agua y minerales) desde la raíz al resto de la planta
+-   Principal elemento de soporte mecánico de las plantas
+-   Cuatro tipos celulares principales
+    -   Elementos conductores o traqueales
+        -   Elementos de los vasos o tráqueas
+        -   Traqueidas
+    -   Células parenquimáticas
+    -   Fibras esclerenquimáticas
+-   Durante el crecimiento primario se originan el xilema y el floema primarios
+-   Si hay crecimiento secundario se forman el xilema (leño) y floema secundarios
+
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Diagrama del tejido xilemático en las plantas. <a href="https://commons.wikimedia.org/wiki/File:Xylem_cells.svg">Kelvinsong</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.](/presentaciones/images/xylem_cells.svg){#fig-xilema fig-align="center"}
+
+![Esquema de los principales tipos celulares del xilema primario de una angiosperma. @megías-pacheco2017.](/presentaciones/images/xilema_esquema.png){#fig-fibras fig-align="center"}
+:::
+:::
+
+::: footer
+*Xilema* del griego *xylon* «madera»
+:::
+
+## Elementos conductores o traqueales = tráqueas \+ traqueidas {.smaller}
+
+::: columns
+::: {.column .fragment width="30%"}
+### Características
+
+::: incremental
+-   Células con pared celular secundaria gruesa, dura y lignificada
+-   Sin contenido citoplasmático después de diferenciación
+-   Se distinguen por el engrosamiento de su parede secundaria
+    -   Anulares, helicoidales, reticulados y punteados. 
+    -   Depende del estado de desarrollo
+:::
+::: fragment
+![Esquema de los diferentes tipos de engrosamientos de la pared secundaria. @megías-pacheco2017.](/presentaciones/images/xilema_engrosamientos.png){#fig-engrosamientos fig-align="center"}
+:::
+:::
+
+::: {.column .fragment width="70%"}
+
+![Esquema de los elementos conductores. Las células no están a escala. @megías-pacheco2017.](/presentaciones/images/xilema_comparacion_esquema.png){#fig-xilema-comparacion fig-align="center"}
+
+::: fragment
+| Traqueas                                               | Traqueidas                                              |
+|----------------------------------------------|--------------------------|
+| Principal elemento conductor de las angiospermas       | Principal elemento conductor de helechos y gimnospermas |
+| Células cortas que forman filas que crean largos tubos | Son células alargadas con los extremos solapados        |
+| Diámetro interno grande y paredes más finas            | Diámetro interno pequeño y paredes más gruesas          |
+| Poros pequeños y más numerosos                         | Poros grandes y menos numerosos                         |
+| Tienen placas perforadas                               | No tienen placas perforadas                             |
+| Mayor eficiencia en la conducción de agua              | Menos eficiencia en la conducción de agua               |
+| Forman tubos                                           | No forman tubos                                         |
+
+: Comparación entre las traqueas (elementos de los vasos) y las traqueidas. @megías-pacheco2017. {#tbl-elementos-conductores}
+:::
+:::
+:::
+
+## Tráqueas y traqueidas
+
+![Traqueas y traqueidas. @nabors2006.](/presentaciones/images/xilema_elementos_conductores.jpg){#fig-xilema-elementos-conductores fig-align="center"}
+
+## Xilema: parénquima y esclerénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Células parenquimáticas
+
+-   Forman parte del xilema
+-   Organizado radialmente y axialmente
+-   Variedad de funciones
+    -   Servir de almacén (carbohidratos, agua, minerales, nitrógeno)
+    -   Permitir la comunicación xilema-floema
+    -   Defensa frente a patógenos
+    -   Entre otros
+:::
+
+::: {.column .fragment width="50%"}
+### Fibras esclerenquimáticas
+
+-   Proteger y soportar las estructuras donde se encuentran
+-   Más largas que los elementos de los vasos, menor diamétro
+-   Parede celular relativamente gruesas y extremos puntiagudos
+:::
+:::
+
+## Xilema: movimiento de agua
+
+La savia bruta asciende por cohesión del agua, transpiración en las hojas, presión radicular.
+
+::: columns
+::: {.column .fragment width="50%"}
+![A. El agua pasa entre traqueidas únicamente a través de pares de punteaduras. B. El agua puede pasar entre los elementos de los vasos a través de perforaciones, pero solo puede moverse de un vaso a otro a través de pares de punteaduras. @mauseth2016.](/presentaciones/images/xilema_transporte_01.png){#fig-xilema-transporte-01 fig-align="center" width="65%"}
+:::
+
+::: {.column .fragment width="50%"}
+![Las punteaduras en las células del xilema participan en la transferencia lateral de agua hacia las células vecinas. @khan2017.](/presentaciones/images/xilema_transporte_02.png){#fig-xilema-transporte-02 fig-align="center"}
+:::
+:::
+
+## Floema
+
+::: columns
+::: {.column .fragment width="50%"}
+### Características
+
+::: incremental
+-   Tejido complejo, también llamado líber o tejido criboso
+-   Transportar y repartir moléculas orgánicas solubles, péptidos, hormonas, proteínas y ARNm
+-   Origen primario y secundario
+-   Conformado por varios tipos celulares
+    -   Elementos cribosos
+        -   Miembros del tubo criboso
+        -   Células cribosas
+    -   Células parenquimáticas
+    -   Fibras de esclerénquima y esclereidas
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Diagrama del tejido floemático en las plantas. <a href="https://commons.wikimedia.org/wiki/File:Phloem_cells.svg">Kelvinsong</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>, via Wikimedia Commons.](/presentaciones/images/phloem_cells.svg){#fig-floema fig-align="center" width="75%"}
+:::
+:::
+
+::: footer
+*Floema* del griego *phloios* «corteza»
+:::
+
+
+## Elementos cribosos: tubo criboso \+ células cribosas {.smaller}
+
+::: columns
+::: {.column .fragment width="30%"}
+### Características
+
+::: incremental
+-   Células vivas
+    -   Múcleo parcialmente degradado
+    -   Protoplasto vivos en la madurez
+    -   Se conserva parte del citoplasma, las cisternas de retículo endoplasmático liso, mitocondrias modificadas, y algunos plastidios
+    -   Pared primaria engrosada con depósitos de calosa
+-   «Controlados» por células albuminosas y células acompañantes
+:::
+:::
+
+::: {.column .fragment width="70%"}
+
+![Esquema de los principales tipos celulares del floema y de los elementos cribosos. @megías-pacheco2017.](/presentaciones/images/floema_elementos_cribosos.png){#fig-elementos-cribosos fig-align="center"}
+
+::: fragment
+| Tubos cribosos                   | Células cribosas                                           |
+|-----------------------------------|-------------------------------------|
+| Típicas de angiospermas          | Típicas de gimnospermas y plantas vasculares sin semillas. |
+| Diámetro mayor                   | Diámetro menor                                             |
+| Más cortas                       | Más largas                                                 |
+| Tienen placas cribosas           | No tienen placas cribosas                                  |
+| Extremos planos a inclinados     | Extremos puntiagudos                                       |
+| Forman tubos                     | No forman tubos                                            |
+| Asociadas a células acompañantes | Asociadas a células albuminíferas                          |
+
+: Comparación entre los tubos cribosos (miembros del tubo criboso) y las células cribosas. @megías-pacheco2017. {#tbl-elementos-conductores}
+:::
+:::
+:::
+
+## Tubo criboso y células cribosas
+
+::: columns
+::: {.column .fragment width="50%"}
+![A. Célula cribosa. B. Miembro de tubo criboso. @mauseth2016.](/presentaciones/images/floema_elementos_cribosos.jpg){#fig-elementos-cribosos-2 fig-align="center"}
+:::
+
+::: {.column .fragment width="50%"}
+![a. Elementos de los tubos cribosos y sus células anexas. b. Elementos de los tubos cribosos agrupados, con las células anexas y el parénquima floemático. c. Placa cribosa. @nabors2006.](/presentaciones/images/floema_tubos criboso.jpg){#fig-tubos-cribosos fig-align="center" width="75%"}
+:::
+:::
+
+## Floema: parénquima y esclerénquima
+
+::: columns
+::: {.column .fragment width="50%"}
+### Células parenquimáticas
+
+-   pueden estar estrechamente asociadas a los elementos cribosos
+-   Células acompañantes (angiospermas)
+    -   Mantenimiento y control metábolico a los tubos cribosos, normalmente relación 1:1
+    -   Cargar y descargar los elementos cribosos
+    -   Núcleo grande y un citoplasma muy rico en orgánulos
+-   Células albuminosas (gimnospermas)
+    -    similar a las células acompañantes con origen diferente
+-   Otras células parenquimáticas
+:::
+
+::: {.column .fragment width="50%"}
+### Fibras de esclerénquima y esclereidas
+
+-   Protección y soporte
+-   Abundantes en el floema secundario
+-   Células alargadas y puntiagudas
+-   Pared secundaria gruesa
+:::
+:::
+
+## Tejidos: clasificación
+
+::: columns
+::: {.column width="50%"}
+### Tejidos indiferenciados
+
+-   Meristemas
+    -   Primarios o apicales
+        -   Protodermis
+        -   Procambium 
+        -   Meristema fundamental
+    -   Secundarios o laterales
+        -   Cambium vascular
+        -   Cambium suberoso
+:::
+
+::: {.column width="50%"}
+### Tejidos diferenciados
+
+-   Fundamental
+    -   Parénquima
+-   Protección
+    -   Epidermis
+    -   Peridermis
+-   Sostén
+    -   Colénquima
+    -   Esclerénquima
+-   Conducción
+    - Xilema
+    - Floema
+-   Secreción
+:::
+:::
+
+# Tejidos diferenciados > Secreción
+
+## Tejidos de secreción {.smaller}
+
+::: columns
+::: {.column .fragment width="50%"}
+> Secrececión: síntesis y liberación de sustancias tanto intracelular, cuando los productos quedan en el citoplasma o en la vacuola como extracelular, cuando los productos salen de la célula, al exterior o hacia espacios internos. @arbo2019
+
+::: incremental
+-   Difícil distinguir entre excreción y secreción
+-   Todas las células vegetales cumplen actividades secretoras intrínsecas
+-   Secreción activa y pasiva
+-   Estructuras de secreción externas
+    -   Hidatodos
+    -   Nectarios
+    -   Osmóforos
+    -   Glándulas de la sal
+    -   Tricomas glandulares
+-   Estructuras de secreción interna
+    -   Células secretoras (idioblastos)
+    -   Cavidades y conductos secretores
+        -   Conductos resiníferos
+        -   Cavidades lisogénicas
+    -   Laticíferos
+:::
+:::
+
+::: {.column .fragment width="50%"}
+![Hidatodo de una hoja de *Sedum brevifolium*. @megías-pacheco2017.](/presentaciones/images/secrecion_hidatodo.jpg){#fig-elementos-cribosos fig-align="center"}
+
+![Canal resinífero en un tallo de *Pinus spp.* @megías-pacheco2017.](/presentaciones/images/secrecion_resinifero.jpg){#fig-elementos-cribosos fig-align="center"}
+:::
+:::
+
+<!-- ## Heading2 -->
+
+<!-- ::: columns -->
+<!-- ::: {.column .fragment width="50%"} -->
+<!-- ::: -->
+
+<!-- ::: {.column .fragment width="50%"} -->
+<!-- ::: -->
+<!-- ::: -->
+
+## Referencias
+
+
